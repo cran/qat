@@ -61,4 +61,3 @@ function(flagvector, filename, measurement_vector=NULL, max_upward_value=0, max_
 		dev.off()		
 	}
 }
-

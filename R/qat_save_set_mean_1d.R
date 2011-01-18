@@ -10,4 +10,3 @@ function(resultlist_part, baseunit="") {
 	returntext <- paste("building average of values with a blocksize of",resultlist_part$result$blocksize)
 	return(list(method = method, returntext=returntext))	
 }
-

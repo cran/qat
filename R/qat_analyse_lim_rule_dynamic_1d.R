@@ -37,4 +37,3 @@ function(measurement_vector, min_vector=NULL, max_vector=NULL, min_vector_name=N
 	names(resultlist)<-c("flagvector", "min_vector", "max_vector", "min_vector_name", "max_vector_name", "min_vector_identifier", "max_vector_identifier")
 	return(resultlist)
 }
-

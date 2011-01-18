@@ -57,4 +57,3 @@ function(workflowlist, listelem, algorithm_text) {
 	}
 	return(workflowlist)
 }
-

@@ -38,4 +38,3 @@ function(flagvector, filename, measurement_vector=NULL, max_return_elements=0, m
 		dev.off()
 	}
 }
-

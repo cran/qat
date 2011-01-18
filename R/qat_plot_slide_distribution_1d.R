@@ -186,4 +186,3 @@ function(resultlist, filename, blocksize=-1, measurement_name="", directoryname=
 	dev.off()
 	
 }
-

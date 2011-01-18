@@ -10,4 +10,3 @@ function(filename) {
 	ncdfobj<-open.ncdf(filename)
 	return(ncdfobj)
 }
-

@@ -20,7 +20,7 @@ library(gplots)
 		bordertext3<-"Histogram of Measurement"
 	}
 #	print(resultlist_hist)
-	if (!is.nan(resultlist_hist) || !is.nan(resultlist_stat)) {
+	if (!is.null(resultlist_hist) || !is.null(resultlist_stat)) {
 		png(filename=path, width=800, height=600, pointsize=12, bg=plotstyle$basecolor)
 			par(font.lab=2)
 			layout(matrix(c(1,2),nrow=1), width=c(2,1))
@@ -73,4 +73,3 @@ library(gplots)
 		dev.off()
 	}
 }
-

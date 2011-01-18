@@ -46,4 +46,3 @@ library(moments)
 	resultlist<- list(stat=resultliststat)
 	return(resultlist)
 }
-

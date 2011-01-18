@@ -130,4 +130,3 @@ function(workflowlist, listelem, comment_text) {
 	}
 	return(workflowlist)
 }
-

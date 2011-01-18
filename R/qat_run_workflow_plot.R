@@ -29,4 +29,3 @@ function(resultlist, measurement_name="", directoryname="", basename="", plotsty
 		}
 	}
 }
-

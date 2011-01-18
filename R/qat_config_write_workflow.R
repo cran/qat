@@ -80,4 +80,3 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 	}
 	return(top)
 }
-

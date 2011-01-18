@@ -87,4 +87,3 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	} #lim sigmafactor
 	return(resultlist)
 }
-

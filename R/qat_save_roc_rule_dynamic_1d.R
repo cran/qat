@@ -28,4 +28,3 @@ function(resultlist_part, baseunit="") {
 	savelist <- list(method = method, meanings = meanings, longname = longname, fillvalue = fillvalue, unit = unit, dimension = dimension, parameter = parameter, picnames=picnames, content = content)
 	return(savelist)	
 }
-

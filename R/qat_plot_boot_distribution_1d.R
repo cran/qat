@@ -146,4 +146,3 @@ function(resultlist_stat, filename, bootruns=-1, measurement_name="", directoryn
 		}
 	dev.off()
 }
-

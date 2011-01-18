@@ -10,4 +10,3 @@ function(measurement_vector, nan_below) {
 	newlist <- list(measurement_vector=measurement_vector, nan_below=nan_below)
 	return(newlist)
 }
-

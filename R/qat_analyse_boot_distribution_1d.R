@@ -32,4 +32,3 @@ library("moments")
 	resultlist<- list(stat=resultliststat,bootruns=bootruns)
 	return(resultlist)
 }
-

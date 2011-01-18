@@ -10,4 +10,3 @@ function(resultlist_part, element = -999, time = NULL, height = NULL, lat = NULL
 	savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_set_addup_1d(resultlist_part, baseunit=""))
 	return(savelist)
 }
-

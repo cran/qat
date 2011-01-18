@@ -9,4 +9,3 @@ function(obj) {
 	lenobj<-length(obj$var)
 	return(lenobj)
 }
-

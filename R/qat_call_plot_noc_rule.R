@@ -11,4 +11,3 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 		qat_plot_noc_rule_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, max_return_elements=resultlist_part$result$max_return_elements, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
 		}
 }
-

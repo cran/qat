@@ -19,4 +19,3 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 		qat_plot_lim_rule_dynamic_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_vector=resultlist_part$result$min_vector, max_vector=resultlist_part$result$max_vector, min_vector_name=resultlist_part$result$min_vector_name, max_vector_name=resultlist_part$result$max_vector_name, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
 	}	
 }
-

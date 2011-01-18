@@ -13,4 +13,3 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_slide', result =qat_analyse_slide_distribution_1d(measurement_vector, blocksize))
 	return(resultlist)
 }
-

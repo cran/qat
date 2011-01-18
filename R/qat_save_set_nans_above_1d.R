@@ -10,4 +10,3 @@ function(resultlist_part, baseunit="") {
 	returntext <- paste("setting values above",resultlist_part$result$nan_above,"to NaN")
 	return(list(method = method, returntext=returntext))	
 }
-

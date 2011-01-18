@@ -13,4 +13,3 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_boot', result =qat_analyse_boot_distribution_1d(measurement_vector, bootruns))
 	return(resultlist)
 }
-

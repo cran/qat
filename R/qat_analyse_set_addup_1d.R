@@ -13,4 +13,3 @@ function(measurement_vector, blocksize) {
 	newlist <- list(measurement_vector=cumsum_vector, blocksize=blocksize)
 	return(newlist)
 }
-

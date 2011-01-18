@@ -33,4 +33,3 @@ function(measurement_vector, max_return_elements = NULL) {
 	names(resultlist)<-c("flagvector","max_return_elements") 
 	return(resultlist)
 }
-

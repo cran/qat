@@ -10,4 +10,3 @@ function(resultlist_part, baseunit="") {
 	returntext <- paste("setting values equal",resultlist_part$result$nan_value,"to NaN")
 	return(list(method = method, returntext=returntext))	
 }
-

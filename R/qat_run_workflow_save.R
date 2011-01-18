@@ -38,4 +38,3 @@ function(resultlist, baseunit="", time=NULL, height= NULL, lat=NULL, lon=NULL, v
 #	savelist[[1]]<- list(transformationonvariable=transformationonvariable)
 	return(savelist)
 }
-

@@ -10,4 +10,3 @@ function(obj,numofvar) {
 	varcontent<-get.var.ncdf(obj,var)
 	return(varcontent)
 }
-

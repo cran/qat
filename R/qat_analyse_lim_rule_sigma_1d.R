@@ -34,4 +34,3 @@ function(measurement_vector, sigma_factor=NULL) {
 	names(resultlist)<-c("flagvector","sigma_factor", "meanofvector", "sdofvector") 
 	return(resultlist)
 }
-

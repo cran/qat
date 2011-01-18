@@ -33,4 +33,3 @@ function(filename="") {
 	}
 	return(plotlist)
 }
-

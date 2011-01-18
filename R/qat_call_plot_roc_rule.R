@@ -15,4 +15,3 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 		qat_plot_roc_rule_dynamic_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, max_upward_vector=resultlist_part$result$max_upward_vector, max_downward_vector=resultlist_part$result$max_downward_vector, upward_vector_name=resultlist_part$result$upward_vector_name, downward_vector_name=resultlist_part$result$downward_vector_name, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
 	}
 }
-

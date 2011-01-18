@@ -61,4 +61,3 @@ function(resultlist, filename, measurement_name="", directoryname="",plotstyle=N
 		}
 	dev.off()
 }
-

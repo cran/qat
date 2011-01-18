@@ -42,4 +42,3 @@ version <- 1
 	names(resultlist)<-c("flagvector","max_upward_value", "max_downward_value")
 	return(resultlist)
 }
-

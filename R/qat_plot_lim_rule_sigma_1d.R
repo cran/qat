@@ -61,4 +61,3 @@ function(flagvector, filename, measurement_vector=NULL, sigma_factor=NULL, meano
 		dev.off()
 	}
 }
-

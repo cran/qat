@@ -72,4 +72,3 @@ function(filename) {
 	}
 	return(workflowlist)
 }
-

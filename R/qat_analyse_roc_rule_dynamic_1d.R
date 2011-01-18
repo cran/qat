@@ -37,4 +37,3 @@ function(measurement_vector, max_upward_vector=NULL, max_downward_vector=NULL, u
 	names(resultlist)<-c("flagvector", "max_upward_vector", "max_downward_vector", "upward_vector_name", "downward_vector_name", "upward_vector_identifier", "downward_vector_identifier")
 	return(resultlist)
 }
-

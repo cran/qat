@@ -42,4 +42,3 @@ function(workflowlist, listelem, resultfile_text) {
 	}
 	return(workflowlist)
 }
-

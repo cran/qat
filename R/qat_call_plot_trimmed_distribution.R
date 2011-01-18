@@ -10,4 +10,3 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 	filename <- paste(basename,"_",resultlist_part$element,"_",'trimmeddist',sep="")
 	qat_plot_trimmed_distribution_1d(resultlist_part$result$stat, filename, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
 }
-

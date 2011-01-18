@@ -50,4 +50,3 @@ function(measurement_vector, workflowlist, time=NULL, height= NULL, lat=NULL, lo
 	resultlist[[1]]<- list(measurement_vector=measurement_vector, time=time,height=height,lat=lat,lon=lon)
 	return(resultlist)
 }
-

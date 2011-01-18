@@ -32,4 +32,3 @@ function(measurement_vector, min_value = NULL, max_value = NULL) {
 	names(resultlist)<-c("flagvector","min_value","max_value") 
 	return(resultlist)
 }
-

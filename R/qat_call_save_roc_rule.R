@@ -15,4 +15,3 @@ function(resultlist_part, element = -999, time = NULL, height = NULL, lat = NULL
 	}
 	return(savelist)
 }
-

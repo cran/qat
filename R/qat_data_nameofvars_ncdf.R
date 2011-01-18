@@ -9,4 +9,3 @@ function(obj) {
 	namelist<-names(obj$var)
 	return(namelist)
 }
-

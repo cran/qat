@@ -9,4 +9,3 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 	filename <- paste(basename,"_",resultlist_part$element,"_",'blockdist',sep="")
 	qat_plot_block_distribution_1d(resultlist_part$result$stat, filename, resultlist_part$result$blocksize, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
 }
-

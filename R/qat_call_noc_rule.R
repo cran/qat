@@ -15,4 +15,3 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	}
 	return(resultlist)
 }
-

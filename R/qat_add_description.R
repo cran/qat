@@ -57,4 +57,3 @@ function(workflowlist, listelem, description_text) {
 	}
 	return(workflowlist)
 }
-
