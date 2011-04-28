@@ -1,0 +1,102 @@
+<qat_basetools>
+	<methods>
+		<method>
+			<name>nan</name>
+			<name>nan_value</name>
+			<name>nan_above</name>
+			<name>nan_below</name>
+			<manipulation_function>qat_call_set_nans</manipulation_function>
+			<save_function>qat_call_save_set_nans</save_function>
+			<description>This method sets a given value to NaN.</description>		
+			<algorithm>Used algorithm is the nan-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>addup</name>
+			<manipulation_function>qat_call_set_addup</manipulation_function>
+			<save_function>qat_call_save_set_addup</save_function>
+			<description>This method adds up a given amount of successive values.</description>			
+			<algorithm>Used algorithm is the addup-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>mean</name>
+			<manipulation_function>qat_call_set_mean</manipulation_function>
+			<save_function>qat_call_save_set_mean</save_function>
+			<description>This method produce a mean of a given amount of successive values.</description>			
+			<algorithm>Used algorithm is the mean-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>lim</name>
+			<name>lim_static</name>
+			<name>lim_dynamic</name>
+			<name>lim_sigma</name>
+			<analysis_function>qat_call_lim_rule</analysis_function>
+			<plot_function>qat_call_plot_lim_rule</plot_function>
+			<save_function>qat_call_save_lim_rule</save_function>
+			<description>Test the data on given limits, which could be static (given maximum and minimum limit for all data), dynamic (different maximum and minimum limit for every data point) or depending on the standard deviation (with a factor of how much standard deviations a data point should maximally differ of the mean of the data).</description>			
+			<algorithm>Used algorithm is the lim-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>noc</name>
+			<analysis_function>qat_call_noc_rule</analysis_function>
+			<plot_function>qat_call_plot_noc_rule</plot_function>
+			<save_function>qat_call_save_noc_rule</save_function>
+			<description>Tests the data, on weather there are successive data points, which repeat themselves more than a given number of times.</description>			
+			<algorithm>Used algorithm is the noc-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>roc</name>
+			<name>roc_static</name>
+			<name>roc_dynamic</name>
+			<analysis_function>qat_call_roc_rule</analysis_function>
+			<plot_function>qat_call_plot_roc_rule</plot_function>
+			<save_function>qat_call_save_roc_rule</save_function>
+			<description>Tests the data, if the difference between two succesive data points exceeds given limits. These could be static (given maximum and minimum limit for all data) or dynamic (different maximum and minimum limit for every data point).</description>			
+			<algorithm>Used algorithm is the roc-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>dist</name>
+			<name>distribution</name>
+			<analysis_function>qat_call_distribution</analysis_function>
+			<plot_function>qat_call_plot_distribution</plot_function>
+			<save_function>qat_call_save_distribution</save_function>
+			<description>This test produce a histogram with a given number of bars.</description>			
+			<algorithm>Used algorithm is the distribution-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>dist_block</name>
+			<name>blockdist</name>
+			<analysis_function>qat_call_block_distribution</analysis_function>
+			<plot_function>qat_call_plot_block_distribution</plot_function>
+			<save_function>qat_call_save_block_distribution</save_function>
+			<description>This test devide the vector into blocks of length blocksize and calculates several statistical moments.</description>	
+			<algorithm>Used algorithm is the block-distribution-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>dist_slide</name>
+			<name>slidedist</name>
+			<analysis_function>qat_call_slide_distribution</analysis_function>
+			<plot_function>qat_call_plot_slide_distribution</plot_function>
+			<save_function>qat_call_save_slide_distribution</save_function>
+			<description>This test use a sliding window of length blocksize and calculates several statistical moments for each step.</description>			
+			<algorithm>Used algorithm is the slide-distribution-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>dist_trimmed</name>
+			<name>trimmeddist</name>
+			<analysis_function>qat_call_trimmed_distribution</analysis_function>
+			<plot_function>qat_call_plot_trimmed_distribution</plot_function>
+			<save_function>qat_call_save_trimmed_distribution</save_function>
+			<description>This test trim the data with 1% on each side at each step and calculates several statistical moments for each step.</description>			
+			<algorithm>Used algorithm is the trimmed-distribution-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+		<method>
+			<name>dist_boot</name>
+			<name>bootdist</name>
+			<analysis_function>qat_call_boot_distribution</analysis_function>
+			<plot_function>qat_call_plot_boot_distribution</plot_function>
+			<save_function>qat_call_save_boot_distribution</save_function>
+			<description>This test bootstrap the data and calculates several statistical moments.</description>			
+			<algorithm>Used algorithm is the bootstrapping-distribution-function of the R-package qat version 0.1.</algorithm>			
+		</method>
+	</methods>
+</qat_basetools>

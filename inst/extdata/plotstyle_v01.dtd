@@ -1,0 +1,5 @@
+<!ELEMENT qat_plotstyle (parameter*)>
+
+<!ELEMENT parameter (parameter_name, parameter_value)>
+<!ELEMENT parameter_name (#PCDATA)>
+<!ELEMENT parameter_value (#PCDATA)>

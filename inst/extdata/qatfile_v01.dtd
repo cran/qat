@@ -1,0 +1,26 @@
+<!ELEMENT qatfile (header, workflow)>
+
+<!ELEMENT header (name, type, description, author, date, (tag)*,version,numofchecks, (config_header)?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT numofchecks (#PCDATA)>
+<!ELEMENT config_header (name, type, description, author, date, (tag)*, version, numofchecks)>
+
+<!ELEMENT workflow (procedure, check)>
+<!ELEMENT procedure (method_name, (parameter)*, (result)?, (description)?, (algorithm)?)>
+<!ELEMENT method_name (#PCDATA)>
+<!ELEMENT parameter (parameter_name, parameter_value)>
+<!ELEMENT parameter_name (#PCDATA)>
+<!ELEMENT parameter_value (#PCDATA)>
+<!ELEMENT result ((comment_on_result)?,(result_file)*)>
+<!ELEMENT comment_on_result (#PCDATA)>
+<!ELEMENT result_file (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT algorithm (#PCDATA)>
+
+<!ELEMENT check (method_name, (parameter)*, (result)?, (description)?, (algorithm)?)>
