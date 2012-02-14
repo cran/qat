@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{User manual} 
+\documentclass{article} 
+\begin{document}
+The extended manual is stored as qatdoku.pdf.
+\end{document}

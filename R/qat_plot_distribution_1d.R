@@ -23,7 +23,7 @@ library(gplots)
 	if (!is.null(resultlist_hist) || !is.null(resultlist_stat)) {
 		png(filename=path, width=800, height=600, pointsize=12, bg=plotstyle$basecolor)
 			par(font.lab=2)
-			layout(matrix(c(1,2),nrow=1), width=c(2,1))
+			layout(matrix(c(1,2),nrow=1), widths=c(2,1))
 			if ((sum(is.nan(resultlist_hist$counts)) != length(resultlist_hist$counts))&& (sum(resultlist_hist$density[!is.nan(resultlist_hist$density)]) != Inf ) ) {
 				plot(resultlist_hist, col=plotstyle$plotcolormain,main=bordertext3, xlab="Data", ylab="Frequency",font=2, col.lab=plotstyle$fontcolor, col.main=plotstyle$fontcolor, col.sub=plotstyle$fontcolor,fg=plotstyle$frontcolor, col.axis=plotstyle$fontcolor, border=plotstyle$frontcolor)
 			}

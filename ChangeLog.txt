@@ -1,3 +1,6 @@
+Version 0.52 (13. February 2012)
+Adding vignette of Documentation file qatdoku,pdf.
+
 Version 0.51 (18 November 2011)
 Corrections for R version 2.14:
 Solving problems in qat_plot_distribution_1d: Default value for resultlist_hist and resultlist_stat is changed in qat_distribution_1d to NULL instead of NaN (because it's a list). Checking for this in qat_plot_distribution_1d is also adapted.

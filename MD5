@@ -1,5 +1,5 @@
-9e6b527c069da2f11e7becfc8c0ed6c7 *ChangeLog.txt
-63b757bd1659313eb49ae296ff9aad31 *DESCRIPTION
+0966170a0a2cc4128082ae3021d9993c *ChangeLog.txt
+4cf118ddeaace05ae501ec4f1c66dae8 *DESCRIPTION
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
 48d175a640c93eed53aea99d5a16d275 *R/qat_add_algorithm.R
 5969a692c176e543df8e26ff502ce424 *R/qat_add_all_algorithms.R
@@ -61,7 +61,7 @@ b97098e6a3c6be515cc0c492ff4cc22f *R/qat_data_numofvars_ncdf.R
 8a2b7e84c4b9db864b8f8d467a858732 *R/qat_data_varcontent_ncdf.R
 ace24b8a7a3a49a35741398a4406b403 *R/qat_plot_block_distribution_1d.R
 4877f0d7192de28a9b908b0590d59a08 *R/qat_plot_boot_distribution_1d.R
-9c5b6986eb3d596b565a3ddb81e32e65 *R/qat_plot_distribution_1d.R
+02029d133bc882606223158aa67747a1 *R/qat_plot_distribution_1d.R
 70d8e5f3188fb1768af2ccd71fd6b053 *R/qat_plot_lim_rule_dynamic_1d.R
 22eb9fe7bdd6852e819c64924aabe34c *R/qat_plot_lim_rule_sigma_1d.R
 a5baa3cbe9124e11036ffe0eea355333 *R/qat_plot_lim_rule_static_1d.R
@@ -92,7 +92,8 @@ c825b1639d8d44dbcce02e9d615faaea *R/qat_save_set_nans_below_1d.R
 efa8b5430c53420aa3627573351c485c *R/qat_save_slide_distribution_1d.R
 b03c76dc63e1b2661da252ba30f7e1c1 *R/qat_save_trimmed_distribution_1d.R
 7d78115fafb452b7265fa314b52ebf13 *R/qat_style_plot.R
-55d482609e72a74c3302cee59467cdab *inst/doc/qatdoku.pdf
+2b8478172cbff5378e3a1558b27f86db *inst/doc/qatdoku.Rnw
+760ddc0eb86267bca2e0282c6e2b737c *inst/doc/qatdoku.pdf
 3d16ec217d6a176e1aff17f67c50d3ac *inst/extdata/plotstyle1.xml
 b58b4b572b2e42706805c69c50686d44 *inst/extdata/plotstyle_v01.dtd
 acaeafe3c5a1665c4cac477ebf647639 *inst/extdata/qat_basetools.xml
