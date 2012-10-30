@@ -4,7 +4,7 @@ function(resultlist_part, baseunit="") {
 ## author: André Düsterhus
 ## date: 12.04.2011
 ## version: A0.1
-## input: resultlist part from qat_analyse_lim_rule_sigma_1d, optional: baseunit
+## input: resultlist part from qat_analyse_slide_distribution_1d, optional: baseunit
 ## output: savelist
 	method <- "dist_slide"
 	meanings <- NULL

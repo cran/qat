@@ -21,7 +21,6 @@ library(moments)
 	p95quantile<-array(0.0,numof_blocks)
 	p25quantile<-array(0.0,numof_blocks)
 	p75quantile<-array(0.0,numof_blocks)
-
 	for (ii in 1:numof_blocks) {
 		vector_of_interest <- measurement_vector[((ii-1)*blocksize+1):(ii*blocksize)]
 		vector_of_interest_wo_nan <- vector_of_interest[!is.na(vector_of_interest)]

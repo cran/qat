@@ -14,7 +14,7 @@ qat_analyse_noc_rule_1d(measurement_vector, max_return_elements)
   \item{max_return_elements}{Number of coherent elements, which are allowed to have no change between the single values, without indicate an error}
 }
 \details{
-This check tests the given measurement vector from the beginning to the end, how much values in a row got the same value. If the number of values, which is defined by max\_return\_elements prior to the actual element got the same value as the actual element, the resulting flagvector will be set to 1 on the actual position. Else it will be set to 0. 
+This check tests the given measurement vector from the beginning to the end, on how much values in a row got the same value. If the number of values, which is defined by max\_return\_elements prior to the actual element got the same value as the actual element, the resulting flagvector will be set to 1 on the actual position. Else it will be set to 0. 
 }
 \value{
 It returns a list with the following entries:

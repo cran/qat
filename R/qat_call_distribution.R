@@ -10,6 +10,11 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	if (mode(numofbars)=="list") {
 		numofbars <- as.numeric(numofbars$value)
 	}
-	resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist', result =qat_analyse_distribution_1d(measurement_vector, numofbars))
+	if (is.null(dim(measurement_vector))) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist', result =qat_analyse_distribution_1d(measurement_vector, numofbars))
+	}
+	if (length(dim(measurement_vector))==2) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist', result =qat_analyse_distribution_2d(measurement_vector, numofbars))
+	}	
 	return(resultlist)
 }

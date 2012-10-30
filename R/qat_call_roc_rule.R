@@ -49,7 +49,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 			} 
 		}
 		# add informations to resultlist
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_dynamic', result=qat_analyse_roc_rule_dynamic_1d(measurement_vector, up_vec, down_vec, workflowlist_part$upward_vector_name, workflowlist_part$downward_vector_name, workflowlist_part$upward_vector, workflowlist_part$downward_vector))				
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_dynamic', result=qat_analyse_roc_rule_dynamic_1d(measurement_vector, up_vec, down_vec, workflowlist_part$upward_vector_name, workflowlist_part$downward_vector_name, workflowlist_part$upward_vector, workflowlist_part$downward_vector))	
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_dynamic', result=qat_analyse_roc_rule_dynamic_2d(measurement_vector, up_vec, down_vec, workflowlist_part$upward_vector_name, workflowlist_part$downward_vector_name, workflowlist_part$upward_vector, workflowlist_part$downward_vector))	
+		}				
 	} #roc dynamic
 	if(!is.null(workflowlist_part$downward_value) || !is.null(workflowlist_part$upward_value)) {
 		# check if minimum-value for static lim-rule exists
@@ -74,7 +79,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 			up_val <- as.numeric(up_val$value)
 		}
 		# add informations to resultlist
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_static', result=qat_analyse_roc_rule_static_1d(measurement_vector, up_val, down_val))	
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_static', result=qat_analyse_roc_rule_static_1d(measurement_vector, up_val, down_val))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='roc_static', result=qat_analyse_roc_rule_static_1d(measurement_vector, up_val, down_val))
+		}
 	} #roc static
 	return(resultlist)
 }

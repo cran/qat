@@ -10,6 +10,7 @@ function(resultlist, filename, measurement_name="", directoryname="",plotstyle=N
 		# if no plotstyle available, use standard plotstyle
 		plotstyle<-qat_style_plot()
 	}
+	library("gplots")
 	# set up savepath of the plot
 	path <- paste(directoryname,filename,".png", sep="")
 	png(filename=path,width=800,height=600, pointsize=12, bg=plotstyle$basecolor)
@@ -59,5 +60,5 @@ function(resultlist, filename, measurement_name="", directoryname="",plotstyle=N
 			bordertext3<-paste("Data: ",measurement_name, sep="")
 			mtext(bordertext3, side=3, line=0, font=2, col=plotstyle$fontcolor, outer=TRUE)
 		}
-	dev.off()
+	dev.off()	
 }

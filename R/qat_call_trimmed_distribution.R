@@ -6,6 +6,11 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 ## version: A0.1
 ## input: measurement_vector, workflowlist element, number of actual element, time vector (optional), latitude vector (optional), longitude vector (optional), 4 optional vectors, resultlist (optional), counter of resultlist (optional)
 ## output: list with the results and parameters of the distribution
-	resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_trimmed', result =qat_analyse_trimmed_distribution_1d(measurement_vector))
+	if (is.null(dim(measurement_vector))) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_trimmed', result =qat_analyse_trimmed_distribution_1d(measurement_vector))
+	}
+	if (length(dim(measurement_vector))==2) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_trimmed', result =qat_analyse_trimmed_distribution_2d(measurement_vector))
+	}	
 	return(resultlist)
 }

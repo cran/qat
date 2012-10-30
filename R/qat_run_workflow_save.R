@@ -10,6 +10,11 @@ function(resultlist, baseunit="", time=NULL, height= NULL, lat=NULL, lon=NULL, v
 	savelist <- list()
 	savelistcounter <- 1
 	cycleelement <- length(resultlist)
+	if (is.null(dim(resultlist[[1]]$measurement_vector))) {
+		dim_mv <- 1
+	} else {
+		dim_mv <- length(dim(resultlist[[1]]$measurement_vector))
+	}
 	print("save (netCDF)")
 	for (ii in 2:cycleelement) {
 		print(ii)
@@ -26,7 +31,7 @@ function(resultlist, baseunit="", time=NULL, height= NULL, lat=NULL, lon=NULL, v
 			# the tests exists
 			if (!is.null(parameter_info$save_function)) {
 				# it is a analysis test
-				savelist <- do.call(parameter_info$save_function,list(templist, baseunit, element=resultlist[[ii]]$element, time=time, height=height ,lat=lat, lon=lon, vec1=vec1, vec2=vec2, vec3=vec3, vec4=vec4, savelist=savelist, savelistcounter=savelistcounter))
+				savelist <- do.call(parameter_info$save_function,list(templist, baseunit, element=resultlist[[ii]]$element, dim_mv=dim_mv,time=time, height=height ,lat=lat, lon=lon, vec1=vec1, vec2=vec2, vec3=vec3, vec4=vec4, savelist=savelist, savelistcounter=savelistcounter))
 				if (length(which(names(savelist)=="element"))==0) {
 					savelistcounter<-length(savelist)
 				} else {

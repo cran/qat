@@ -11,7 +11,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 		if (mode(blocksize_value)=="list") {
 			blocksize_value <- as.numeric(blocksize_value$value)
 		}
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='mean', result =qat_analyse_set_mean_1d(measurement_vector, blocksize_value))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='mean', result =qat_analyse_set_mean_1d(measurement_vector, blocksize_value))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='mean', result =qat_analyse_set_mean_2d(measurement_vector, blocksize_value))
+		}		
 	}
 	return(resultlist)
 }

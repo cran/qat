@@ -1,5 +1,5 @@
 qat_call_save_roc_rule <-
-function(resultlist_part, element = -999, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1) {
+function(resultlist_part, element = -999, dim_mv=1, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1) {
 ## functionality: calling function for qat_save_roc_rule_static and qat_save_roc_rule_dynamic
 ## author: André Düsterhus
 ## date: 11.04.2011
@@ -8,10 +8,20 @@ function(resultlist_part, element = -999, time = NULL, height = NULL, lat = NULL
 ## output: list with the results and parameters of the roc rule analysis
 	# add informations to savelist
 	if (resultlist_part$method == 'roc_static') {
-		savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_static_1d(resultlist_part, baseunit=""))
+		if (dim_mv==1) {
+			savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_static_1d(resultlist_part, baseunit=""))
+		}
+		if (dim_mv==2) {
+			savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_static_2d(resultlist_part, baseunit=""))
+		}
 	}
 	if (resultlist_part$method == 'roc_dynamic') {
-		savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_dynamic_1d(resultlist_part, baseunit=""))
+		if (dim_mv==1) {
+			savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_dynamic_1d(resultlist_part, baseunit=""))
+		}
+		if (dim_mv==2) {
+			savelist[[savelistcounter <- savelistcounter+1]] <- list(element=element, tosave = qat_save_roc_rule_dynamic_2d(resultlist_part, baseunit=""))
+		}
 	}
 	return(savelist)
 }

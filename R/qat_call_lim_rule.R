@@ -49,7 +49,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 			} 
 		}
 		# add informations to resultlist
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_dynamic', result =qat_analyse_lim_rule_dynamic_1d(measurement_vector, min_vec, max_vec,workflowlist_part$minimum_vector_name, workflowlist_part$maximum_vector_name, workflowlist_part$minimum_vector, workflowlist_part$maximum_vector))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_dynamic', result =qat_analyse_lim_rule_dynamic_1d(measurement_vector, min_vec, max_vec,workflowlist_part$minimum_vector_name, workflowlist_part$maximum_vector_name, workflowlist_part$minimum_vector, workflowlist_part$maximum_vector))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_dynamic', result =qat_analyse_lim_rule_dynamic_2d(measurement_vector, min_vec, max_vec,workflowlist_part$minimum_vector_name, workflowlist_part$maximum_vector_name, workflowlist_part$minimum_vector, workflowlist_part$maximum_vector))
+		}		
 	} #lim dynamic
 	if(!is.null(workflowlist_part$minimum_value) || !is.null(workflowlist_part$maximum_value)) {
 		# check if minimum-value for static lim-rule exists
@@ -74,7 +79,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 			max_val <- as.numeric(max_val$value)
 		}
 		# add informations to resultlist
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_static', result=qat_analyse_lim_rule_static_1d(measurement_vector, min_val, max_val))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_static', result=qat_analyse_lim_rule_static_1d(measurement_vector, min_val, max_val))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_static', result=qat_analyse_lim_rule_static_2d(measurement_vector, min_val, max_val))
+		}	
 	} #lim static
 	if(!is.null(workflowlist_part$sigma_factor)) {
 		# check if sigma factor for lim-rule exists
@@ -83,7 +93,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 			sigma_factor <- as.numeric(as.character(workflowlist_part$sigma_factor)[6])
 		}
 		# add informations to resultlist
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_sigma', result=qat_analyse_lim_rule_sigma_1d(measurement_vector,sigma_factor))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_sigma', result=qat_analyse_lim_rule_sigma_1d(measurement_vector,sigma_factor))
+		}
+		if (length(dim(measurement_vector)) ==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='lim_sigma', result=qat_analyse_lim_rule_sigma_2d(measurement_vector,sigma_factor))
+		}		
 	} #lim sigmafactor
 	return(resultlist)
 }

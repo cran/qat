@@ -34,8 +34,8 @@ It returns a list with the following entries:
 \seealso{\code{\link{qat_plot_roc_rule_dynamic_1d}}, \code{\link{qat_call_roc_rule}}, \code{\link{qat_analyse_roc_rule_static_1d}}}
 \examples{
 vec <- rnorm(100)
-min_vector<-seq(1,2,length.out=1000)
-max_vector<-seq(1,2,length.out=1000)
+min_vector<-seq(1,2,length.out=100)
+max_vector<-seq(1,2,length.out=100)
 result <- qat_analyse_roc_rule_dynamic_1d(vec, min_vector, max_vector, upward_vector_name="upward vector", downward_vector_name="downward vector")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

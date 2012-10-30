@@ -6,14 +6,14 @@
 Quality Assurance Toolkit
 }
 \description{
-Performing and documenting scientific quality assurance of meteorological data.
+This package helps to provide a quality assurance on data.
 }
 \details{
 \tabular{ll}{
 Package: \tab qat\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2010-08-10\cr
+Version: \tab 0.60\cr
+Date: \tab 2012-10-30\cr
 License: \tab GPL-2\cr
 }
 

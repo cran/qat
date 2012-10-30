@@ -8,6 +8,11 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 ## output: plots
 	if (resultlist_part$method == 'noc') {
 		filename<-paste(basename,"_",resultlist_part$element,"_",'noc',sep="")
-		qat_plot_noc_rule_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, max_return_elements=resultlist_part$result$max_return_elements, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		if (is.null(dim(resultlist_part$result$flagvector))) {	
+			qat_plot_noc_rule_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, max_return_elements=resultlist_part$result$max_return_elements, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
+		if (length(dim(resultlist_part$result$flagvector))==2) {	
+			qat_plot_noc_rule_2d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, max_return_elements=resultlist_part$result$max_return_elements, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}		
 		}
 }

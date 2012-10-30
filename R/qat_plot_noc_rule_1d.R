@@ -27,10 +27,10 @@ function(flagvector, filename, measurement_vector=NULL, max_return_elements=0, m
 			title(main=list("NOC-Rule", col=plotstyle$fontcolor), outer=TRUE)
 			if (max_return_elements > 0) {
 				bordertext <- paste("max. number of returning elements: ", max_return_elements)
-				bordertext2<- paste("Repetition errors: ",length(which(flagvector==1)), " ")
 				mtext(bordertext, side=3, line=2, font=2, col=plotstyle$fontcolor)
-				mtext(bordertext2, side=3, line=1, font=2, col=plotstyle$fontcolor)
-			}
+			}	
+			bordertext2<- paste("Repetition errors: ",length(which(flagvector==1)), " ")
+			mtext(bordertext2, side=3, line=1, font=2, col=plotstyle$fontcolor)
 			if(measurement_name != "") {
 				bordertext3<-paste("Data: ",measurement_name, sep="")
 				mtext(bordertext3, side=3, line=3, font=2, col=plotstyle$fontcolor)

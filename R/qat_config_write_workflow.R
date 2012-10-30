@@ -7,8 +7,10 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 ## input: ncdf object
 ## output: to do-list of analysing steps
 	library("XML")
+#	print("1")
 	# initialisation of variables
-	top <- newXMLNode("qatfile")
+	doc <- newXMLDoc()
+	top <- newXMLNode("qatfile", doc=doc)
 	header<- newXMLNode("header", parent = top)
 	if (name!="") {
 		newXMLNode("name", name ,parent = header)
@@ -32,6 +34,7 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 	if (sample_place!="") {
 		newXMLNode("sample_place", sample_time_stop, parent = header)
 	}
+#	print("1")
 	if (config_filename!="") {
 		xmlfile <- xmlTreeParse(config_filename)
 		numofheader <- which(names(xmlfile$doc$children$qatfile)=="header")
@@ -41,12 +44,13 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 			newXMLNode(names(xmlfile$doc$children$qatfile[[numofheader]])[ii],textarray[length(textarray)], parent=config_header)
 		}
 	}
+#	print("1")
 	workflow <- newXMLNode("workflow", parent = top)
 	for (ii in 1:(length(workflowlist))) {
 		act_method <- newXMLNode(workflowlist[[ii]]$type, parent = workflow)
 		is_method_elem <- which(names(workflowlist[[1]])=="method")
 		is_type_elem <- which(names(workflowlist[[1]])=="type")
-		newXMLNode("method_name",workflowlist[[ii]][is_method_elem],parent = act_method)
+		newXMLNode("method_name",workflowlist[[ii]][[is_method_elem]],parent = act_method)
 		for (jj in 1:length(workflowlist[[ii]])) {
 #			print(names(workflowlist[[ii]])[[jj]])
 			is_addinfo_elem <- which(names(workflowlist[[ii]])=="additional_information")
@@ -56,7 +60,7 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 				act_parameter<-newXMLNode("parameter",parent = act_method)
 #				textarray<-as.character(workflowlist[[ii]][[jj]])
 				newXMLNode("parameter_name",names(workflowlist[[ii]])[jj],parent = act_parameter)
-				newXMLNode("parameter_value",workflowlist[[ii]][jj],parent = act_parameter)
+				newXMLNode("parameter_value",workflowlist[[ii]][[jj]],parent = act_parameter)
 			}
 			if (jj %in% is_addinfo_elem) {
 				if (length(which(names(workflowlist[[ii]][[jj]]) == "result"))>0) {
@@ -74,9 +78,13 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 			}
 		}
 	}
-	newXMLDoc(top)
+#	print("1")
+	if(is.null(doc)) {
+		newXMLDoc(top)
+	}
 	if (output_filename != "") {
 		write(saveXML(top),file=output_filename)
 	}
+#	print("1")
 	return(top)
 }

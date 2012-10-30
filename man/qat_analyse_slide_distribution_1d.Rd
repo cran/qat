@@ -14,7 +14,7 @@ qat_analyse_slide_distribution_1d(measurement_vector, blocksize)
   \item{blocksize}{Length of the sliding window}
 }
 \details{
-The emasurement vector will be scanned stepwise by a sliding window, which got a length of the given parameter blocksize. At every step some statistical parameters will be calculated for the actual window. As a result a list will be given back, with these parameters, where every entry got a length of the length of the measurement vector minus the blocksize plus one.
+The measurement vector will be scanned stepwise by a sliding window, which got a length of the given parameter blocksize. At every step some statistical parameters will be calculated for the actual window. As a result a list will be given back, with these parameters, where every entry got a length of the length of the measurement vector minus the blocksize plus one.
 }
 \value{
 It returns a list with the following entries:

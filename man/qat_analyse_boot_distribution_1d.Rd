@@ -14,7 +14,7 @@ qat_analyse_boot_distribution_1d(measurement_vector, bootruns)
   \item{bootruns}{Number of bootstrap runs, which should be performed}
 }
 \details{
-The measurement vector will be bottstrapped with the number of runs, which is given by the parameter bootruns. From each runs, some statistical parameters will be calculated and given back in teh resultlist.
+The measurement vector will be bottstrapped with the number of runs, which is given by the parameter bootruns. From each runs, some statistical parameters will be calculated and given back in the resultlist.
 }
 \value{
 It returns a list with the following entries:

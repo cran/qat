@@ -11,7 +11,12 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 		if (mode(return_elements)=="list") {
 			return_elements <- as.numeric(return_elements$value)
 		}
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='noc', result=qat_analyse_noc_rule_1d(measurement_vector, return_elements))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='noc', result=qat_analyse_noc_rule_1d(measurement_vector, return_elements))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='noc', result=qat_analyse_noc_rule_2d(measurement_vector, return_elements))
+		}
 	}
 	return(resultlist)
 }

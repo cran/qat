@@ -8,5 +8,10 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 ## output: plots
 
 	filename <- paste(basename,"_",resultlist_part$element,"_",'trimmeddist',sep="")
-	qat_plot_trimmed_distribution_1d(resultlist_part$result$stat, filename, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	if (is.null(dim(resultlist_part$result$first_moment))) {
+		qat_plot_trimmed_distribution_1d(resultlist_part$result$stat, filename, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	}
+	if (length(dim(resultlist_part$result$stat$first_moment))==2) {
+		qat_plot_trimmed_distribution_2d(resultlist_part$result$stat, filename, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	}
 }

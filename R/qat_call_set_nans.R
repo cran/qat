@@ -11,21 +11,36 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 		if (mode(nan_value)=="list") {
 			nan_value <- as.numeric(nan_value$value)
 		}
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_value', result =qat_analyse_set_nans_1d(measurement_vector, nan_value))	
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_value', result =qat_analyse_set_nans_1d(measurement_vector, nan_value))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_value', result =qat_analyse_set_nans_1d(measurement_vector, nan_value))
+		}		
 	}
 	if(!is.null(workflowlist_part$nan_above)) {
 		nan_above <- as.numeric(workflowlist_part$nan_above)
 		if (mode(nan_above)=="list") {
 			nan_above <- as.numeric(nan_above$value)
 		}
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_above', result =qat_analyse_set_nans_above_1d(measurement_vector, nan_above))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_above', result =qat_analyse_set_nans_above_1d(measurement_vector, nan_above))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_above', result =qat_analyse_set_nans_above_1d(measurement_vector, nan_above))
+		}
 	}
 	if(!is.null(workflowlist_part$nan_below)) {
 		nan_below <- as.numeric(workflowlist_part$nan_below)
 		if (mode(nan_below)=="list") {
 			nan_below <- as.numeric(nan_below$value)
 		}
-		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_below', result =qat_analyse_set_nans_below_1d(measurement_vector, nan_below))
+		if (is.null(dim(measurement_vector))) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_below', result =qat_analyse_set_nans_below_1d(measurement_vector, nan_below))
+		}
+		if (length(dim(measurement_vector))==2) {
+			resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='nan_below', result =qat_analyse_set_nans_below_2d(measurement_vector, nan_below))
+		}
 	}
 	return(resultlist)
 }

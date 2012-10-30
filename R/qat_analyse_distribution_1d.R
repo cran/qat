@@ -38,8 +38,8 @@ library(moments)
 		names(resultliststat)[12]<- "p75_quantile"
 		resultlisthist <- hist(measurement_vector_wo_nan, breaks=seq(min(measurement_vector_wo_nan), max(measurement_vector_wo_nan), length=numofbars+1), include.lowest=TRUE, plot=FALSE)
 	} else {
-		resultlisthist <- NULL
-		resultliststat <- NULL
+		resultlisthist <- NaN
+		resultliststat <- NaN
 	}
 	resultlist <- list(hist=resultlisthist,stat=resultliststat, numofbars=numofbars)
 	return(resultlist)

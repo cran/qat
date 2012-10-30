@@ -14,7 +14,7 @@ qat_analyse_distribution_1d(measurement_vector, numofbars)
   \item{numofbars}{Numbers of bars of the histogram plot}
 }
 \details{
-From a given measurement vector a histogram will be performed. The nimber of bars of this will be given by the parameter numofbars. Additionally some statistical parameters, like the first moments and some quantiles will be calculated.
+From a given measurement vector a histogram will be performed. The number of bars of this will be given by the parameter numofbars. Additionally some statistical parameters, like the first moments and some quantiles will be calculated.
 }
 \value{
 It returns a list with the following entries:

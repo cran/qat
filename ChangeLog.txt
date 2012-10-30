@@ -1,4 +1,7 @@
-Version 0.53 (13. February 2012)
+Version 0.6 (19. December 2012)
+Enhancement for 2d vectors. Switch to ncdf4 package.
+
+Version 0.53 (14. February 2012)
 Correct problems with recreation of vignettes at CRAN.
 
 Version 0.52 (13. February 2012)

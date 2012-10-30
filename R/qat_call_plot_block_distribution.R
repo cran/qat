@@ -7,5 +7,10 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 ## input: resultlist, optional: the measurement vector, a description name for the measurement vector, a directory for the result, a basic name for the results, and a plotstyle element
 ## output: plots
 	filename <- paste(basename,"_",resultlist_part$element,"_",'blockdist',sep="")
-	qat_plot_block_distribution_1d(resultlist_part$result$stat, filename, resultlist_part$result$blocksize, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	if (is.null(dim(resultlist_part$result$first_moment))) {
+		qat_plot_block_distribution_1d(resultlist_part$result$stat, filename, resultlist_part$result$blocksize, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	}
+	if (length(dim(resultlist_part$result$stat$first_moment))==2) {
+		qat_plot_block_distribution_2d(resultlist_part$result$stat, filename, resultlist_part$result$blocksize, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+	}
 }

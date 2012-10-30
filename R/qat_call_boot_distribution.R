@@ -10,6 +10,11 @@ function(measurement_vector, workflowlist_part, element=-999, time=NULL, height=
 	if (mode(bootruns)=="list") {
 		bootruns <- as.numeric(bootruns$value)
 	}
-	resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_boot', result =qat_analyse_boot_distribution_1d(measurement_vector, bootruns))
+	if (is.null(dim(measurement_vector))) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_boot', result =qat_analyse_boot_distribution_1d(measurement_vector, bootruns))
+	}
+	if (length(dim(measurement_vector))==2) {
+		resultlist[[resultlistcounter <- resultlistcounter+1]] <- list(element=element, method='dist_boot', result =qat_analyse_boot_distribution_2d(measurement_vector, bootruns))
+	}	
 	return(resultlist)
 }

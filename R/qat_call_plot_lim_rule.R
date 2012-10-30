@@ -8,14 +8,29 @@ function(resultlist_part, measurement_vector=NULL, time=NULL, height= NULL, lat=
 ## output: plots
 	if (resultlist_part$method == 'lim_static') {
 		filename<-paste(basename,"_",resultlist_part$element,"_",'lim_static',sep="")
-	qat_plot_lim_rule_static_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_value=resultlist_part$result$min_value, max_value=resultlist_part$result$max_value, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		if (is.null(dim(resultlist_part$result$flagvector))) {
+			qat_plot_lim_rule_static_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_value=resultlist_part$result$min_value, max_value=resultlist_part$result$max_value, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
+		if (length(dim(resultlist_part$result$flagvector))==2) {
+			qat_plot_lim_rule_static_2d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_value=resultlist_part$result$min_value, max_value=resultlist_part$result$max_value, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
 	}
 	if (resultlist_part$method == 'lim_sigma') {
 		filename<-paste(basename,"_",resultlist_part$element,"_",'lim_sigma',sep="")
-		qat_plot_lim_rule_sigma_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, sigma_factor=resultlist_part$result$sigma_factor, meanofvector=resultlist_part$result$meanofvector, sdofvector=resultlist_part$result$sdofvector, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		if (is.null(dim(resultlist_part$result$flagvector))) {	
+			qat_plot_lim_rule_sigma_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, sigma_factor=resultlist_part$result$sigma_factor, meanofvector=resultlist_part$result$meanofvector, sdofvector=resultlist_part$result$sdofvector, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
+		if (length(dim(resultlist_part$result$flagvector))==2) {
+			qat_plot_lim_rule_sigma_2d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, sigma_factor=resultlist_part$result$sigma_factor, meanofvector=resultlist_part$result$meanofvector, sdofvector=resultlist_part$result$sdofvector, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)			
+		}		
 	}
 	if (resultlist_part$method == 'lim_dynamic') {
 		filename<-paste(basename,"_",resultlist_part$element,"_",'lim_dynamic',sep="")
-		qat_plot_lim_rule_dynamic_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_vector=resultlist_part$result$min_vector, max_vector=resultlist_part$result$max_vector, min_vector_name=resultlist_part$result$min_vector_name, max_vector_name=resultlist_part$result$max_vector_name, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		if (is.null(dim(resultlist_part$result$flagvector))) {	
+			qat_plot_lim_rule_dynamic_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_vector=resultlist_part$result$min_vector, max_vector=resultlist_part$result$max_vector, min_vector_name=resultlist_part$result$min_vector_name, max_vector_name=resultlist_part$result$max_vector_name, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
+		if (length(dim(resultlist_part$result$flagvector))==2) {
+			qat_plot_lim_rule_dynamic_1d(resultlist_part$result$flagvector, filename, measurement_vector=measurement_vector, min_vector=resultlist_part$result$min_vector, max_vector=resultlist_part$result$max_vector, min_vector_name=resultlist_part$result$min_vector_name, max_vector_name=resultlist_part$result$max_vector_name, measurement_name=measurement_name, directoryname=directoryname, plotstyle=plotstyle)
+		}
 	}	
 }
