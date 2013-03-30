@@ -4,7 +4,7 @@
 		<type>configuration</type>
 		<description>This workflow tests normal distributed vectors</description>
 		<author>André Düsterhus</author>
-		<date>2010-08-02</date>
+		<date>2013-03-26</date>
 		<tag>normal</tag>
 		<tag>testconfig</tag>
 		<version>0.1</version>
@@ -105,6 +105,89 @@
 			<parameter>
 				<parameter_name>bootruns</parameter_name>
 				<parameter_value>100</parameter_value>
+			</parameter>	
+		</check>
+		<check>
+			<method_name>histogram_test</method_name>		
+			<parameter>
+				<parameter_name>metric</parameter_name>
+				<parameter_value>kld</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>blocksize</parameter_name>
+				<parameter_value>50</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>numofbars</parameter_name>
+				<parameter_value>65</parameter_value>
+			</parameter>	
+			<parameter>
+				<parameter_name>factorofbar</parameter_name>
+				<parameter_value>100</parameter_value>
+			</parameter>
+		</check>
+		<check>
+			<method_name>histogram_test</method_name>		
+			<parameter>
+				<parameter_name>metric</parameter_name>
+				<parameter_value>jsd</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>blocksize</parameter_name>
+				<parameter_value>50</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>numofbars</parameter_name>
+				<parameter_value>65</parameter_value>
+			</parameter>	
+			<parameter>
+				<parameter_name>factorofbar</parameter_name>
+				<parameter_value>100</parameter_value>
+			</parameter>
+		</check>
+		<check>
+			<method_name>histogram_test</method_name>		
+			<parameter>
+				<parameter_name>metric</parameter_name>
+				<parameter_value>rms</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>blocksize</parameter_name>
+				<parameter_value>50</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>numofbars</parameter_name>
+				<parameter_value>65</parameter_value>
+			</parameter>	
+		</check>
+		<check>
+			<method_name>histogram_test</method_name>		
+			<parameter>
+				<parameter_name>metric</parameter_name>
+				<parameter_value>ms</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>blocksize</parameter_name>
+				<parameter_value>50</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>numofbars</parameter_name>
+				<parameter_value>65</parameter_value>
+			</parameter>	
+		</check>
+		<check>
+			<method_name>histogram_test</method_name>		
+			<parameter>
+				<parameter_name>metric</parameter_name>
+				<parameter_value>emd</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>blocksize</parameter_name>
+				<parameter_value>50</parameter_value>
+			</parameter>
+			<parameter>
+				<parameter_name>numofbars</parameter_name>
+				<parameter_value>65</parameter_value>
 			</parameter>	
 		</check>
 	</workflow>

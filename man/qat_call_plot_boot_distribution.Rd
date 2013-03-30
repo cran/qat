@@ -9,7 +9,7 @@ qat_call_plot_boot_distribution(resultlist_part, measurement_vector = NULL, time
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{resultlist_part}{A list with the result, which is directly or indirectly produced by qat\_analyse\_trimmed\_distribution\_1d.}
+  \item{resultlist_part}{A list with the result, which is directly or indirectly produced by qat\_analyse\_boot\_distribution\_1d.}
   \item{measurement_vector}{The measurement vector, which was tested}
   \item{time}{A vector of time elements with the length of the measurement vector}
   \item{height}{A vector of height elements with the length of the measurement vector}

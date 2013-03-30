@@ -6,8 +6,8 @@ function(obj,numofvar) {
 ## version: A0.2
 ## input: ncdf object, number of variable
 ## output: content of variable
-	library("ncdf4")
+	library("ncdf")
 	var<-obj$var[[numofvar]]
-	varcontent<-ncvar_get(obj,var)
+	varcontent<-get.var.ncdf(obj,var)
 	return(varcontent)
 }

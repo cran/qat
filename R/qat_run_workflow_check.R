@@ -24,6 +24,7 @@ function(measurement_vector, workflowlist, time=NULL, height= NULL, lat=NULL, lo
 		}
 		# this call unsures, that the correct file is called, when the package is installed
 		filename <- system.file("extdata/qat_basetools.xml", package="qat")
+#		filename <-"../include/inst/extdata/qat_basetools.xml"
 		parameter_info <- qat_read_parameter(filename, trim(templist$method))
 		if (length(parameter_info) != 0) {
 			# the tests exists

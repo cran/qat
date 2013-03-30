@@ -19,7 +19,7 @@ First the mean and the standard derivation of the measurement vector will be cal
 }
 \value{
 It returns a list with the following entries:
-  \item{flagvector}{A vector of length of measurement vector. For every element of the measurement vector the flagvector (2d array) contains a -1, if its exceeding its dedicated minimum vector element, a 1, if its exceeding its dedicated maximum vector element, or a 0, when no exceeding has happend.}
+  \item{flagvector}{A vector of length of measurement vector. For every element of the measurement vector the flagvector (2d array) contains a -1, if its exceeding its dedicated minimum vector element, a 1, if its exceeding its dedicated maximum vector element, or a 0, when no exceeding has happenned.}
   \item{sigma_factor}{Give back the given sigma\_factor}
   \item{meanofvector}{Give back the calculated mean of the measurement vector}
   \item{sdofvector}{Give back the calculated standard deviation of the measurement vector}

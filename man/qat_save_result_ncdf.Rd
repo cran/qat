@@ -61,9 +61,10 @@ No return value.
 	rlist <- qat_run_workflow_check(testvector,workflowlist,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)
 	# produce the savelist
 	savelist <- qat_run_workflow_save(rlist)
-	filename_out <- "myresults.nc" 
+	filename_out <- "myresults" 
 	# write netCDF-file of the results in current directory
-	qat_save_result_ncdf(testvector, savelist=savelist, filename_out, workflowlist=workflowlist,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)}
+\dontrun{
+	qat_save_result_ncdf(testvector, savelist=savelist, filename_out, workflowlist=workflowlist,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)}}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{utilities}

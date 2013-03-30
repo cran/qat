@@ -1,3 +1,9 @@
+Version 0.71 (30. March 2013)
+Minor corrections.
+
+Version 0.7 (29. March 2013)
+Including histogram test. Switch back to ncdf package for windows users.
+
 Version 0.6 (19. December 2012)
 Enhancement for 2d vectors. Switch to ncdf4 package.
 

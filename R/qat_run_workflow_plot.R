@@ -21,6 +21,7 @@ function(resultlist, measurement_name="", directoryname="", basename="", plotsty
 		}
 		# this call ensures, that the correct file is called, when the package is installed
 		filename <- system.file("extdata/qat_basetools.xml", package="qat")
+#		filename <-"../include/inst/extdata/qat_basetools.xml"
 		parameter_info <- qat_read_parameter(filename, trim(templist$method))
 		if (length(parameter_info) != 0) {
 			if (!is.null(parameter_info$plot_function)) {
