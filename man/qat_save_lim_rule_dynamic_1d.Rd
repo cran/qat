@@ -22,7 +22,8 @@ Returning a savelist with the content of the resultlist.
 	vec <- rnorm(1000)
 	min_vector<-seq(-1,-2,length.out=1000)
 	max_vector<-seq(1,2,length.out=1000)
-	result <- list(result=qat_analyse_lim_rule_dynamic_1d(vec, min_vector, max_vector, min_vector_name="minimum vector", max_vector_name="maximum vector"))
+	result <- list(result=qat_analyse_lim_rule_dynamic_1d(vec, min_vector, 
+	max_vector, min_vector_name="minimum vector", max_vector_name="maximum vector"))
 	savelist <- qat_save_lim_rule_dynamic_1d(result)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

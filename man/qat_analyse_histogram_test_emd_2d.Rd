@@ -27,7 +27,8 @@ qat_analyse_histogram_test_emd_2d(measurement_vector, blocksize, numofbars)
 vec <- array(rnorm(1000), c(100, 20))
 vec[51:100, ] <- vec[51:100, ] + 1
 result <- qat_analyse_histogram_test_emd_2d(vec, 4, 65)
-qat_plot_histogram_test(result$field, "test_emd_2d", result$blocksize, result$numofbars, "emd", result$runs)
+qat_plot_histogram_test(result$field, "test_emd_2d", result$blocksize, 
+result$numofbars, "emd", result$runs)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

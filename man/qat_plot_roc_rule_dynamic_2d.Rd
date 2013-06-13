@@ -6,7 +6,10 @@
 A plot of the result of a dynamic ROC rule check will be produced.
 }
 \usage{
-qat_plot_roc_rule_dynamic_2d(flagvector, filename, measurement_vector = NULL, max_upward_vector = NULL, max_downward_vector = NULL, upward_vector_name = NULL, downward_vector_name = NULL, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_roc_rule_dynamic_2d(flagvector, filename, measurement_vector = NULL,
+max_upward_vector = NULL, max_downward_vector = NULL, upward_vector_name = NULL, 
+downward_vector_name = NULL, measurement_name = "", directoryname = "", 
+plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,9 +36,13 @@ No return value.
 vec <- array(rnorm(500), c(25,20))
 min_vector <- array(rnorm(500)+2, c(25,20))
 max_vector <- array(rnorm(500)+2, c(25,20))
-result <- qat_analyse_roc_rule_dynamic_2d(vec, min_vector, max_vector, upward_vector_name="upward vector", downward_vector_name="downward vector")
+result <- qat_analyse_roc_rule_dynamic_2d(vec, min_vector, max_vector, 
+upward_vector_name="upward vector", downward_vector_name="downward vector")
 # this example produce a file exampleplot_roc_dyn.png in the current directory
-qat_plot_roc_rule_dynamic_2d(result$flagvector, "exampleplot_roc_dyn", measurement_vector=vec, max_upward_vector=result$max_upward_vector, max_downward_vector=result$max_downward_vector, upward_vector_name=result$upward_vector_name, downward_vector_name=result$downward_vector_name, measurement_name="Result of Check") 
+qat_plot_roc_rule_dynamic_2d(result$flagvector, "exampleplot_roc_dyn", 
+measurement_vector=vec, max_upward_vector=result$max_upward_vector, 
+max_downward_vector=result$max_downward_vector, upward_vector_name=result$upward_vector_name, 
+downward_vector_name=result$downward_vector_name, measurement_name="Result of Check") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

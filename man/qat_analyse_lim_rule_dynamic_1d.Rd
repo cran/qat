@@ -8,7 +8,9 @@
  This check tests data on whether it exceeds a dynamic threshold.
 }
 \usage{
-qat_analyse_lim_rule_dynamic_1d(measurement_vector, min_vector = NULL, max_vector = NULL, min_vector_name = NULL, max_vector_name = NULL, min_vector_identifier = NULL, max_vector_identifier = NULL)
+qat_analyse_lim_rule_dynamic_1d(measurement_vector, min_vector = NULL, 
+max_vector = NULL, min_vector_name = NULL, max_vector_name = NULL, 
+min_vector_identifier = NULL, max_vector_identifier = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -39,7 +41,8 @@ It returns a list with the following entries:
 vec <- rnorm(1000)
 min_vector<-seq(-1,-2,length.out=1000)
 max_vector<-seq(1,2,length.out=1000)
-result <- qat_analyse_lim_rule_dynamic_1d(vec, min_vector, max_vector, min_vector_name="minimum vector", max_vector_name="maximum vector")
+result <- qat_analyse_lim_rule_dynamic_1d(vec, min_vector, max_vector, 
+min_vector_name="minimum vector", max_vector_name="maximum vector")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

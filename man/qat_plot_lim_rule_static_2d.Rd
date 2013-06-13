@@ -6,7 +6,9 @@
 A plot of the result of a dynamic LIM rule check will be produced.
 }
 \usage{
-qat_plot_lim_rule_static_2d(flagvector, filename, measurement_vector = NULL, min_value = NULL, max_value = NULL, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_lim_rule_static_2d(flagvector, filename, measurement_vector = NULL, 
+min_value = NULL, max_value = NULL, measurement_name = "", directoryname = "", 
+plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,7 +33,9 @@ No return value.
 vec <- array(rnorm(500),c(25,20))
 result <- qat_analyse_lim_rule_static_2d(vec, -2, 2)
 # this example produce a file exampleplot_lim_sta.png in the current directory
-qat_plot_lim_rule_static_2d(result$flagvector, "exampleplot_lim_sta", measurement_vector=vec, min_value=result$min_value, max_value=result$max_value, measurement_name="Testresult")
+qat_plot_lim_rule_static_2d(result$flagvector, "exampleplot_lim_sta", 
+measurement_vector=vec, min_value=result$min_value, max_value=result$max_value, 
+measurement_name="Testresult")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

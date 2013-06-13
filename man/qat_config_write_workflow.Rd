@@ -6,7 +6,9 @@
 A workflowlist will be stored into a XML-file.
 }
 \usage{
-qat_config_write_workflow(workflowlist, name = "", description = "", author = "", date = "", sample_time_start = "", sample_time_stop = "", sample_place = "", config_filename = "", output_filename = "")
+qat_config_write_workflow(workflowlist, name = "", description = "", 
+author = "", date = "", sample_time_start = "", sample_time_stop = "", 
+sample_place = "", config_filename = "", output_filename = "")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

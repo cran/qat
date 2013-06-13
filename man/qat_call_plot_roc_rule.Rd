@@ -6,7 +6,9 @@
 A result of qat\_analyse\_roc\_rule\_static\_1d or qat\_analyse\_roc\_rule\_dynamics\_1d will be plotted.
 }
 \usage{
-qat_call_plot_roc_rule(resultlist_part, measurement_vector = NULL, time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", basename = "", plotstyle = NULL)
+qat_call_plot_roc_rule(resultlist_part, measurement_vector = NULL, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", 
+basename = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,11 +35,16 @@ No return value.
 vec <- rnorm(100)
 downward_vector<-seq(1,2,length.out=100)
 upward_vector<-seq(1,2,length.out=100)
-workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1",upward_vector="vec2",downward_vector_name="downward vector", upward_vector_name="upward vector")
-resultlist <- qat_call_roc_rule(vec, workflowlist_part, element=1, vec1=downward_vector, vec2=upward_vector)
-# this example produce the files exampleplot_1_roc_static.png and exampleplot_1_roc_dynamic.png in the current directory
+workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1",
+upward_vector="vec2",downward_vector_name="downward vector", 
+upward_vector_name="upward vector")
+resultlist <- qat_call_roc_rule(vec, workflowlist_part, element=1, vec1=downward_vector, 
+vec2=upward_vector)
+# this example produce the files exampleplot_1_roc_static.png and 
+# exampleplot_1_roc_dynamic.png in the current directory
 for (ii in 2:3) {
-	qat_call_plot_roc_rule(resultlist[[ii]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+qat_call_plot_roc_rule(resultlist[[ii]], measurement_vector=vec,
+measurement_name="Result of Check", basename="exampleplot")
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

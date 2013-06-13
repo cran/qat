@@ -5,7 +5,9 @@
 \description{
 A result of qat\_analyse\_boot\_distribution\_1d will be plotted.}
 \usage{
-qat_call_plot_boot_distribution(resultlist_part, measurement_vector = NULL, time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", basename = "", plotstyle = NULL)
+qat_call_plot_boot_distribution(resultlist_part, measurement_vector = NULL, 
+time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", 
+directoryname = "", basename = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,11 +31,12 @@ No return value.
 \author{Andre Duesterhus}
 \seealso{\code{\link{qat_plot_boot_distribution_1d}}}
 \examples{
-vec <- rnorm(1000)
-workflowlist_part <- list(bootruns=1000)
+vec <- rnorm(500)
+workflowlist_part <- list(bootruns=100)
 resultlist <- qat_call_boot_distribution(vec, workflowlist_part, element=1)
 # this example produce the file exampleplot_1_bootdist.png in the current directory
-qat_call_plot_boot_distribution(resultlist[[2]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+qat_call_plot_boot_distribution(resultlist[[2]], measurement_vector=vec, 
+measurement_name="Result of Check", basename="exampleplot")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

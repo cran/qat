@@ -6,7 +6,9 @@
 This check tests data on whether the change between two consecutive data points exceeds a dynamic threshold.
 }
 \usage{
-qat_analyse_roc_rule_dynamic_1d(measurement_vector, max_upward_vector = NULL, max_downward_vector = NULL, upward_vector_name = NULL, downward_vector_name = NULL, upward_vector_identifier = NULL, downward_vector_identifier = NULL)
+qat_analyse_roc_rule_dynamic_1d(measurement_vector, max_upward_vector = NULL, 
+max_downward_vector = NULL, upward_vector_name = NULL, downward_vector_name = NULL,
+upward_vector_identifier = NULL, downward_vector_identifier = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -36,7 +38,8 @@ It returns a list with the following entries:
 vec <- rnorm(100)
 min_vector<-seq(1,2,length.out=100)
 max_vector<-seq(1,2,length.out=100)
-result <- qat_analyse_roc_rule_dynamic_1d(vec, min_vector, max_vector, upward_vector_name="upward vector", downward_vector_name="downward vector")
+result <- qat_analyse_roc_rule_dynamic_1d(vec, min_vector, max_vector, 
+upward_vector_name="upward vector", downward_vector_name="downward vector")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

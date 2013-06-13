@@ -5,7 +5,8 @@
 This function performs a workflow of constructing a savelist by a given resultlist.
 }
 \usage{
-qat_run_workflow_save(resultlist, baseunit = "", time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL)
+qat_run_workflow_save(resultlist, baseunit = "", time = NULL, height = NULL, 
+lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{  
@@ -41,13 +42,15 @@ A savelist, with the results of the performed tests will be given back.
 	uproc <- seq(1,3,length.out=500)
 	downroc <- seq(3,1,length.out=500)
 	# run the workflow on the testvector
-	rlist <- qat_run_workflow_check(testvector,workflowlist,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)
+	rlist <- qat_run_workflow_check(testvector,workflowlist,vec1=maxlim, vec2=minlim, 
+	vec3=uproc, vec4=downroc)
 	# produce the savelist
 	savelist <- qat_run_workflow_save(rlist)
 	filename_out <- "myresults" 
 	# write netCDF-file of the results in current directory
 \dontrun{
-	qat_save_result_ncdf(testvector, savelist=savelist, filename_out, workflowlist=workflowlist ,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)}
+	qat_save_result_ncdf(testvector, savelist=savelist, filename_out, 
+	workflowlist=workflowlist ,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

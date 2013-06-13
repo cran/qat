@@ -4,7 +4,9 @@
 \description{
 This function calls qat\_save\_roc\_rule\_static\_1d or qat\_save\_roc\_rule\_dynamic\_1d. As a result a part of a savelist is constructed, which can be used to construct a netCDF file.}
 \usage{
-qat_call_save_roc_rule(resultlist_part, element = -999, dim_mv=1, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
+qat_call_save_roc_rule(resultlist_part, element = -999, dim_mv=1, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, 
+vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,12 +39,16 @@ The given savelist will be returned, with included results of the functions whic
 	vec <- rnorm(100)
 	downward_vector<-seq(1,2,length.out=1000)
 	upward_vector<-seq(1,2,length.out=1000)
-	workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1",upward_vector="vec2",downward_vector_name="downward vector", upward_vector_name="upward vector")
-	resultlist <- qat_call_roc_rule(vec, workflowlist_part, element=1, vec1=downward_vector, vec2=upward_vector)
+	workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1",
+	upward_vector="vec2",downward_vector_name="downward vector", 
+	upward_vector_name="upward vector")
+	resultlist <- qat_call_roc_rule(vec, workflowlist_part, element=1, 
+	vec1=downward_vector, vec2=upward_vector)
 	savelist <- list()
 	savelistcounter <- 1
 	for (ii in 2:3) {
-		savelist <- qat_call_save_roc_rule(resultlist[[ii]], savelist=savelist, savelistcounter=savelistcounter)
+		savelist <- qat_call_save_roc_rule(resultlist[[ii]], savelist=savelist, 
+		savelistcounter=savelistcounter)
 		if (length(which(names(savelist)=="element"))==0) {
 			savelistcounter<-length(savelist)
 		} else {

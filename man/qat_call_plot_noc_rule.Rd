@@ -6,7 +6,9 @@
 A result of qat\_analyse\_noc\_rule\_1d will be plotted.
 }
 \usage{
-qat_call_plot_noc_rule(resultlist_part, measurement_vector = NULL, time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", basename = "", plotstyle = NULL)
+qat_call_plot_noc_rule(resultlist_part, measurement_vector = NULL, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", 
+basename = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -34,7 +36,8 @@ vec <- c(1,2,3,4,4,4,5,5,4,3,NaN,3,2,1)
 workflowlist_part <- list(max_return_elements=1)
 resultlist <- qat_call_noc_rule(vec, workflowlist_part,element=1)
 # this example produce a file exampleplot_1_noc.png in the current directory
-qat_call_plot_noc_rule(resultlist[[2]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+qat_call_plot_noc_rule(resultlist[[2]], measurement_vector=vec, 
+measurement_name="Result of Check", basename="exampleplot")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

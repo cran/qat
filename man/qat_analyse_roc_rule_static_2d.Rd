@@ -6,7 +6,8 @@
 This check tests data on whether the change between two consecutive data points exceeds a static threshold.
 }
 \usage{
-qat_analyse_roc_rule_static_2d(measurement_vector, max_upward_value, max_downward_value)
+qat_analyse_roc_rule_static_2d(measurement_vector, max_upward_value, 
+max_downward_value)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

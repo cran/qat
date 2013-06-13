@@ -4,7 +4,8 @@
 \title{Perform a histogram test with the metric JSD}
 \description{This check divides the data into blocks, estimates their probability density functions by histograms and compares them by using the Jenson-Shannon Divergence.}
 \usage{
-qat_analyse_histogram_test_jsd_2d(measurement_vector, blocksize, numofbars, factorofbar)
+qat_analyse_histogram_test_jsd_2d(measurement_vector, blocksize, numofbars, 
+factorofbar)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -30,7 +31,8 @@ qat_analyse_histogram_test_jsd_2d(measurement_vector, blocksize, numofbars, fact
 vec <- array(rnorm(1000), c(100, 20))
 vec[51:100, ] <- round(vec[51:100, ])
 result <- qat_analyse_histogram_test_jsd_2d(vec, 4, 65, 100)
-qat_plot_histogram_test(result$field, "test_jsd_2d", result$blocksize, result$numofbars, result$factorofbar, "jsd", result$runs)
+qat_plot_histogram_test(result$field, "test_jsd_2d", result$blocksize, 
+result$numofbars, result$factorofbar, "jsd", result$runs)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

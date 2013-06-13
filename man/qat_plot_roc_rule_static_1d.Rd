@@ -6,7 +6,9 @@
 A plot of the result of a static ROC rule check will be produced.
 }
 \usage{
-qat_plot_roc_rule_static_1d(flagvector, filename, measurement_vector = NULL, max_upward_value = 0, max_downward_value = 0, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_roc_rule_static_1d(flagvector, filename, measurement_vector = NULL, 
+max_upward_value = 0, max_downward_value = 0, measurement_name = "", 
+directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,7 +33,9 @@ No return value.
 vec <- rnorm(100)
 result <- qat_analyse_roc_rule_static_1d(vec, 2,2)
 # this example produce a file exampleplot_roc_sta.png in the current directory
-qat_plot_roc_rule_static_1d(result$flagvector, "exampleplot_roc_sta", measurement_vector=vec, max_upward_value=result$max_upward_value, max_downward_value=result$max_downward_value, measurement_name="Result of Check") 
+qat_plot_roc_rule_static_1d(result$flagvector, "exampleplot_roc_sta", 
+measurement_vector=vec, max_upward_value=result$max_upward_value, 
+max_downward_value=result$max_downward_value, measurement_name="Result of Check") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -4,7 +4,9 @@
 \description{
 This function calls qat\_save\_lim\_rule\_static\_1d, qat\_save\_lim\_rule\_sigma\_1d or qat\_save\_lim\_rule\_dynamic\_1d. As a result a part of a savelist is constructed, which can be used to construct a netCDF file.}
 \usage{
-qat_call_save_lim_rule(resultlist_part, element = -999, dim_mv=1, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
+qat_call_save_lim_rule(resultlist_part, element = -999, dim_mv=1, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, 
+vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,12 +39,16 @@ The given savelist will be returned, with included results of the functions whic
 	vec <- rnorm(1000)
 	min_vector<-seq(-1,-2,length.out=1000)
 	max_vector<-seq(1,2,length.out=1000)
-	workflowlist_part <- list(minimum_value=-2, maximum_value=2,minimum_vector="vec1",maximum_vector="vec2",minimum_vector_name="minimum vector",maximum_vector_name="maximum vector", sigma_factor=2)
-	resultlist <- qat_call_lim_rule(vec, workflowlist_part, element=1, vec1=min_vector, vec2=max_vector)
+	workflowlist_part <- list(minimum_value=-2, maximum_value=2,minimum_vector="vec1",
+	maximum_vector="vec2",minimum_vector_name="minimum vector",
+	maximum_vector_name="maximum vector", sigma_factor=2)
+	resultlist <- qat_call_lim_rule(vec, workflowlist_part, element=1, vec1=min_vector, 
+	vec2=max_vector)
 	savelist <- list()
 	savelistcounter <- 1
 	for (ii in 2:4) {
-		savelist <- qat_call_save_lim_rule(resultlist[[ii]], savelist=savelist, savelistcounter=savelistcounter)
+		savelist <- qat_call_save_lim_rule(resultlist[[ii]], savelist=savelist, 
+		savelistcounter=savelistcounter)
 		if (length(which(names(savelist)=="element"))==0) {
 			savelistcounter<-length(savelist)
 		} else {

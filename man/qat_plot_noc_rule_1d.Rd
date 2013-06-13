@@ -6,7 +6,9 @@
 A plot of the result of a NOC rule check will be produced.
 }
 \usage{
-qat_plot_noc_rule_1d(flagvector, filename, measurement_vector = NULL, max_return_elements = 0, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_noc_rule_1d(flagvector, filename, measurement_vector = NULL, 
+max_return_elements = 0, measurement_name = "", directoryname = "", 
+plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -30,7 +32,8 @@ No return value.
 vec <- c(1,2,3,4,4,4,5,5,4,3,NaN,3,2,1)
 result <- qat_analyse_noc_rule_1d(vec, 1)
 # this example produce a file exampleplot_noc.png in the current directory
-qat_plot_noc_rule_1d(result$flagvector, "exampleplot_noc", measurement_vector=vec, max_return_elements=result$max_return_elements, measurement_name="Result of Check")
+qat_plot_noc_rule_1d(result$flagvector, "exampleplot_noc", measurement_vector=vec, 
+max_return_elements=result$max_return_elements, measurement_name="Result of Check")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

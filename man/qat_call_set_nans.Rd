@@ -6,7 +6,9 @@
 This function set a specified value of a vector to NaN.
 }
 \usage{
-qat_call_set_nans(measurement_vector, workflowlist_part, element = -999, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
+qat_call_set_nans(measurement_vector, workflowlist_part, element = -999, 
+time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, 
+vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

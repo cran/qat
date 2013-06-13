@@ -6,7 +6,8 @@
 A plot of the result of a distribution check will be produced.
 }
 \usage{
-qat_plot_distribution_1d(resultlist_hist, filename, resultlist_stat, numofbars = -1, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_distribution_1d(resultlist_hist, filename, resultlist_stat, 
+numofbars = -1, measurement_name = "", directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,7 +32,8 @@ No return value.
 vec <- rnorm(1000)
 result <- qat_analyse_distribution_1d(vec, 15)
 # this example produce a file exampleplot_dist.png in the current directory
-qat_plot_distribution_1d(result$hist, "exampleplot_dist", result$stat, numofbars=result$numofbars, measurement_name="Result of Check")	
+qat_plot_distribution_1d(result$hist, "exampleplot_dist", result$stat, 
+numofbars=result$numofbars, measurement_name="Result of Check")	
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

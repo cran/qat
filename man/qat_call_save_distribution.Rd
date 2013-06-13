@@ -4,7 +4,9 @@
 \description{
 This function calls qat\_save\_distribution\_1d. As a result a part of a savelist is constructed, which can be used to construct a netCDF file.}
 \usage{
-qat_call_save_distribution(resultlist_part, element = -999, dim_mv=1, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
+qat_call_save_distribution(resultlist_part, element = -999, dim_mv=1, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, 
+vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,7 +39,8 @@ The given savelist will be returned, with included results of the functions whic
 	vec <- rnorm(1000)
 	workflowlist_part <- list(numofbars=15)
 	resultlist <- qat_call_distribution(vec, workflowlist_part, element=1)	
-	qat_call_plot_distribution(resultlist[[2]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+	qat_call_plot_distribution(resultlist[[2]], measurement_vector=vec, 
+	measurement_name="Result of Check", basename="exampleplot")
 	savelist <- qat_call_save_distribution(resultlist[[2]])}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

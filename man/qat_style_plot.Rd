@@ -36,17 +36,14 @@ downroc <- seq(3,1,length.out=500)
 filename_ps <- system.file("extdata/plotstyle1.xml", package="qat")
 ps<-qat_style_plot(filename_ps)
 # run the workflow on the testvector
-rlist <- qat_run_workflow_check(testvector,workflowlist,vec1=maxlim, vec2=minlim, vec3=uproc, vec4=downroc)
+rlist <- qat_run_workflow_check(testvector,workflowlist,vec1=maxlim, vec2=minlim, 
+vec3=uproc, vec4=downroc)
 # produce some plots of the result in teh current directory with new plotstyle
 qat_run_workflow_plot(rlist, measurement_name="Test", basename="test", plotstyle=ps)
 # add some more informations for the workflow
 workflowlist <- qat_add_all_descriptions(workflowlist) 
 workflowlist <- qat_add_all_algorithms(workflowlist)
 workflowlist <- qat_add_comment(workflowlist, 1, "No problems")
-
-filename_out <- "myworkflow_result.xml" 
-# write edited workflow in current directory
-qat_config_write_workflow(workflowlist, output_filename=filename_out) 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

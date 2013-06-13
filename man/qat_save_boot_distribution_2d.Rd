@@ -20,7 +20,7 @@ Returning a savelist with the content of the resultlist.
 \seealso{\code{\link{qat_call_save_boot_distribution}}, \code{\link{qat_run_workflow_save}}}
 \examples{
 	vec <- array(rnorm(1000), c(10, 100))
-	result <- list(result=qat_analyse_boot_distribution_2d(vec, 100))
+	result <- list(result=qat_analyse_boot_distribution_2d(vec, 10))
 	savelist <- qat_save_boot_distribution_2d(result)	
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

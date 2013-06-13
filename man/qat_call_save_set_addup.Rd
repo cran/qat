@@ -8,7 +8,9 @@ Produce a savelist-entry for a set Addup
 This function calls qat\_save\_set\_addup\_1d. As a result a part of a savelist is constructed, which can be used to construct a netCDF file.
 }
 \usage{
-qat_call_save_set_addup(resultlist_part, element = -999, dim_mv=1, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
+qat_call_save_set_addup(resultlist_part, element = -999, dim_mv=1, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, 
+vec4 = NULL, baseunit = NULL, savelist = list(), savelistcounter = 1)
 }
 \arguments{
   \item{resultlist_part}{A list with the results of the check}

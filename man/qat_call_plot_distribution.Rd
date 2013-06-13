@@ -6,7 +6,9 @@
 A result of qat\_analyse\_distribution\_1d will be plotted.
 }
 \usage{
-qat_call_plot_distribution(resultlist_part, measurement_vector = NULL, time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", basename = "", plotstyle = NULL)
+qat_call_plot_distribution(resultlist_part, measurement_vector = NULL, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", 
+basename = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -34,7 +36,8 @@ vec <- rnorm(1000)
 workflowlist_part <- list(numofbars=15)
 resultlist <- qat_call_distribution(vec, workflowlist_part, element=1)	
 # this example produce a file exampleplot_1_dist.png in the current directory
-qat_call_plot_distribution(resultlist[[2]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+qat_call_plot_distribution(resultlist[[2]], measurement_vector=vec, 
+measurement_name="Result of Check", basename="exampleplot")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

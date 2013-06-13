@@ -6,7 +6,8 @@
 A plot of the result of a booted distribution check will be produced.
 }
 \usage{
-qat_plot_boot_distribution_1d(resultlist_stat, filename, bootruns = -1, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_boot_distribution_1d(resultlist_stat, filename, bootruns = -1, 
+measurement_name = "", directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,10 +27,11 @@ No return value.
 \author{Andre Duesterhus}
 \seealso{\code{\link{qat_analyse_boot_distribution_1d}}}
 \examples{
-vec <- rnorm(1000)
-result <- qat_analyse_boot_distribution_1d(vec, 1000)
+vec <- rnorm(500)
+result <- qat_analyse_boot_distribution_1d(vec, 100)
 # this example produce a file exampleplot_bootdist.png in the current directory
-qat_plot_boot_distribution_1d(result$stat, "exampleplot_bootdist", bootruns=result$bootruns, measurement_name="Result of Check")
+qat_plot_boot_distribution_1d(result$stat, "exampleplot_bootdist", 
+bootruns=result$bootruns, measurement_name="Result of Check")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

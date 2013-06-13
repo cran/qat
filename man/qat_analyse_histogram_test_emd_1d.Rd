@@ -26,7 +26,8 @@ qat_analyse_histogram_test_emd_1d(measurement_vector, blocksize, numofbars)
 \examples{
 	vec <- c(rnorm(1000), rnorm(1000)+1)
 	result <- qat_analyse_histogram_test_emd_1d(vec, 50, 65)
-	qat_plot_histogram_test(result$field, "test_emd_1d", result$blocksize, result$numofbars, "emd", result$runs)
+	qat_plot_histogram_test(result$field, "test_emd_1d", result$blocksize, 
+		result$numofbars, "emd", result$runs)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

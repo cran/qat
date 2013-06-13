@@ -1,15 +1,15 @@
 Package: qat
 Type: Package
 Title: Quality Assurance Toolkit
-Version: 0.71
-Date: 2013-03-30
+Version: 0.72
+Date: 2013-06-13
 Author: Andre Duesterhus
 Maintainer: Andre Duesterhus <andue@uni-bonn.de>
 Description: This package delivers some functions to provide a
         scientific quality assurance of meteorological data.
 Depends: R (>= 2.6.1), ncdf, gplots, XML, gdata, moments, boot, fields
 License: GPL-2
-Packaged: 2013-03-30 08:11:36 UTC; andue
+Packaged: 2013-06-18 20:43:16 UTC; andue
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-03-30 18:19:37
+Date/Publication: 2013-06-19 00:49:39

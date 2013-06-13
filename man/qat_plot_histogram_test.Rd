@@ -4,7 +4,9 @@
 \title{Plot a histogram test result}
 \description{A plot of the result of a histogram test will be produced.}
 \usage{
-qat_plot_histogram_test(resultfield, filename, blocksize = -1, numofbars = -1, factorofbar = -1, metric = NULL, runs = NULL, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_histogram_test(resultfield, filename, blocksize = -1, numofbars = -1, 
+factorofbar = -1, metric = NULL, runs = NULL, measurement_name = "", 
+directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,7 +31,8 @@ No return value.
 \examples{
 	vec <- c(rnorm(1000), rnorm(1000)+1)
 	result <- qat_analyse_histogram_test_emd_1d(vec, 50, 65)
-	qat_plot_histogram_test(result$field, "test_emd_1d", result$blocksize, result$numofbars, "emd", result$runs)
+	qat_plot_histogram_test(result$field, "test_emd_1d", result$blocksize, 
+	result$numofbars, "emd", result$runs)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

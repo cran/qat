@@ -6,7 +6,9 @@
 A result of qat\_analyse\_slide\_distribution\_1d will be plotted.
 }
 \usage{
-qat_call_plot_slide_distribution(resultlist_part, measurement_vector = NULL, time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", directoryname = "", basename = "", plotstyle = NULL)
+qat_call_plot_slide_distribution(resultlist_part, measurement_vector = NULL, 
+time = NULL, height = NULL, lat = NULL, lon = NULL, measurement_name = "", 
+directoryname = "", basename = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,8 +35,10 @@ No return value.
 vec <- rnorm(100)
 workflowlist_part <- list(blocksize=10)
 resultlist <- qat_call_slide_distribution(vec, workflowlist_part, element=1)	
-# this example produce the files exampleplot_1_slidedist_1.png, exampleplot_1_slidedist_2.png and exampleplot_1_slidedist_3.png in the current directory
-qat_call_plot_slide_distribution(resultlist[[2]], measurement_vector=vec, measurement_name="Result of Check", basename="exampleplot")
+# this example produce the files exampleplot_1_slidedist_1.png, exampleplot_1_slidedist_2.png 
+# and exampleplot_1_slidedist_3.png in the current directory
+qat_call_plot_slide_distribution(resultlist[[2]], measurement_vector=vec, 
+measurement_name="Result of Check", basename="exampleplot")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

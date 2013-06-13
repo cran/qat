@@ -6,7 +6,9 @@
 This function calls the described tests, which are defined by the parameters in the workflowlist\_part. The possible called functions are qat\_analyse\_roc\_rule\_dynamic\_1d and qat\_analyse\_roc\_rule\_static\_1d.
 }
 \usage{
-qat_call_roc_rule(measurement_vector, workflowlist_part, element = -999, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
+qat_call_roc_rule(measurement_vector, workflowlist_part, element = -999, time = NULL, 
+height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, 
+vec4 = NULL, resultlist = list(), resultlistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -38,7 +40,8 @@ The given resultlist will be returned, with included results of the functions wh
 vec <- rnorm(100)
 downward_vector<-seq(1,2,length.out=1000)
 upward_vector<-seq(1,2,length.out=1000)
-workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1",upward_vector="vec2",downward_vector_name="downward vector", upward_vector_name="upward vector")
+workflowlist_part <- list(downward_value=2, upward_value=2,downward_vector="vec1", 
+upward_vector="vec2",downward_vector_name="downward vector", upward_vector_name="upward vector")
 result <- qat_call_roc_rule(vec, workflowlist_part,vec1=downward_vector,vec2=upward_vector)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

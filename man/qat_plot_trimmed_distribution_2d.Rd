@@ -6,7 +6,8 @@
 A plot of the result of a trimmed distribution check will be produced.
 }
 \usage{
-qat_plot_trimmed_distribution_2d(resultlist, filename, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_trimmed_distribution_2d(resultlist, filename, measurement_name = "", 
+directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,7 +29,8 @@ No return value.
 vec <- array(rnorm(100),c(25,20))
 result <- qat_analyse_trimmed_distribution_2d(vec)
 # this example produce a file exampleplot_trimmeddist.png in the current directory
-qat_plot_trimmed_distribution_2d(result$stat, "exampleplot_trimmeddist", measurement_name="Result of Check")	
+qat_plot_trimmed_distribution_2d(result$stat, "exampleplot_trimmeddist", 
+measurement_name="Result of Check")	
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

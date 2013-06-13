@@ -6,7 +6,9 @@
 A plot of the result of a dynamic lim rule check will be produced.
 }
 \usage{
-qat_plot_lim_rule_sigma_1d(flagvector, filename, measurement_vector = NULL, sigma_factor = NULL, meanofvector = NaN, sdofvector = NULL, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_lim_rule_sigma_1d(flagvector, filename, measurement_vector = NULL, 
+sigma_factor = NULL, meanofvector = NaN, sdofvector = NULL, measurement_name = "", 
+directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,7 +34,9 @@ No return value
 vec <- rnorm(1000)
 result <- qat_analyse_lim_rule_sigma_1d(vec, 2)
 # this example produce a file exampleplot_lim_sig.png in the current directory
-qat_plot_lim_rule_sigma_1d(result$flagvector, "exampleplot_lim_sig", measurement_vector=vec, sigma_factor=result$sigma_factor, meanofvector=result$meanofvector, sdofvector=result$sdofvector, measurement_name="Result of Check")
+qat_plot_lim_rule_sigma_1d(result$flagvector, "exampleplot_lim_sig", measurement_vector=vec, 
+sigma_factor=result$sigma_factor, meanofvector=result$meanofvector, sdofvector=result$sdofvector, 
+measurement_name="Result of Check")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

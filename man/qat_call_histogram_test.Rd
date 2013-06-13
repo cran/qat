@@ -6,7 +6,9 @@
 This function calls the described tests, which are defined by the parameters in the workflowlist\_part. The possible called functions are qat\_analyse\_histogram\_test\_xxx\_xd.
 }
 \usage{
-qat_call_histogram_test(measurement_vector, workflowlist_part, element = -999, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
+qat_call_histogram_test(measurement_vector, workflowlist_part, element = -999, 
+time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, 
+vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

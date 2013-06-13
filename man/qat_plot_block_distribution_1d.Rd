@@ -6,7 +6,8 @@
 A plot of the result of a block distribution check will be produced.
 }
 \usage{
-qat_plot_block_distribution_1d(resultlist, filename, blocksize = -1, measurement_name = "", directoryname = "", plotstyle = NULL)
+qat_plot_block_distribution_1d(resultlist, filename, blocksize = -1, 
+measurement_name = "", directoryname = "", plotstyle = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,7 +30,8 @@ No return value.
 vec <- rnorm(1000)
 result <- qat_analyse_block_distribution_1d(vec, 50)
 # this example produce a file exampleplot_blockdist.png in the current directory
-qat_plot_block_distribution_1d(result$stat, "exampleplot_blockdist", blocksize=result$blocksize, measurement_name="Result of Check")		
+qat_plot_block_distribution_1d(result$stat, "exampleplot_blockdist", 
+blocksize=result$blocksize, measurement_name="Result of Check")		
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

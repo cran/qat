@@ -6,7 +6,9 @@
 This function adds up sucessive values of a given vector
 }
 \usage{
-qat_call_set_addup(measurement_vector, workflowlist_part, element = -999, time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
+qat_call_set_addup(measurement_vector, workflowlist_part, element = -999, 
+time = NULL, height = NULL, lat = NULL, lon = NULL, vec1 = NULL, vec2 = NULL, 
+vec3 = NULL, vec4 = NULL, resultlist = list(), resultlistcounter = 1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
