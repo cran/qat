@@ -1,7 +1,7 @@
 qat_analyse_boot_distribution_1d <-
 function(measurement_vector, bootruns) {
-library("boot")     
-library("moments")
+#library("boot")     
+#library("moments")
 ## functionality: check statistical moments of the measurement_vector with bootstrapping technique
 ## author: André Düsterhus
 ## date: 03.06.2010

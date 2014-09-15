@@ -6,6 +6,6 @@ function(obj) {
 ## version: A0.2
 ## input: filename of an existing netcdf-file
 ## output: ncdf object
-	library("ncdf")
+#	library("ncdf")
 	close.ncdf(obj)
 }

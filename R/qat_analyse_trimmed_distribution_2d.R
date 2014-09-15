@@ -1,6 +1,6 @@
 qat_analyse_trimmed_distribution_2d <-
 function(measurement_vector) {
-library(moments)
+#library(moments)
 ## functionality: calculates trimmed moments of a measurement_vector
 ## author: André Düsterhus
 ## date: 02.08.2011

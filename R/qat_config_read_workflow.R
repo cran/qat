@@ -6,7 +6,7 @@ function(filename) {
 ## version: A0.1
 ## input: ncdf object
 ## output: to do-list of analysing steps
-	library("XML")
+#	library("XML")
 	# initialisation of variables
 	workflowlist <- list()
 	listcounter <- 0

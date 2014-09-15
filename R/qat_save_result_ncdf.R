@@ -7,7 +7,7 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 ## input: measurement vector, savelist, filename, optional: workflowlist, time vector, latitude vector, longitude vector, additional vectors, bool wheather store the measurement vector, baseunit, units of the dimensions, name of a directory, missing value, variable name, information on transformation on variable, name of the author, original filename, data level, workflow filename
 ## output: a netcdf file stored at filename with the results
 	if (!is.null(savelist)&&(length(savelist)>0)){
-		library("ncdf")
+#		library("ncdf")
 		if (is.null(dim(measurement_vector))) {
 			dim_mv <- 1
 		} else {

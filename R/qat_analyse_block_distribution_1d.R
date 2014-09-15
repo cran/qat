@@ -1,6 +1,6 @@
 qat_analyse_block_distribution_1d <-
 function(measurement_vector, blocksize) {
-library(moments)
+#library(moments)
 ## functionality: calculates the propability distributions of blockwise sections of a measurement_vector
 ## author: André Düsterhus
 ## date: 30.01.2010

@@ -6,7 +6,7 @@ function(flagvector, filename, measurement_vector=NULL, min_vector=NULL, max_vec
 ## version: A0.1
 ## input: flagvector from qat_analyse_lim_rule_dynamic, measurement_vector, min_value, max_value, directoryname, filename, plotstylelist
 ## output: plot
-	library("gplots")
+#	library("gplots")
 	if (is.null(plotstyle)) {
 		# if no plotstyle available, use standard plotstyle
 		plotstyle<-qat_style_plot()

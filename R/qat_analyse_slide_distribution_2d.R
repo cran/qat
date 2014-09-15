@@ -1,6 +1,6 @@
 qat_analyse_slide_distribution_2d <-
 function(measurement_vector, blocksize) {
-library(moments)
+#library(moments)
 ## functionality: calculates the propability distributions of a sliding window of a measurement_vector
 ## author: André Düsterhus
 ## date: 02.08.2011

@@ -10,8 +10,8 @@ function(resultfield, filename, blocksize=-1, numofbars=-1, factorofbar=-1, metr
 		# if no plotstyle available, use standard plotstyle
 		plotstyle<-qat_style_plot()
 	}
-	library("gplots")
-	library("fields")
+#	library("gplots")
+#	library("fields")
 	path <- paste(directoryname,filename,".png", sep="")
 	png(filename=path,width=800,height=600, pointsize=12, bg=plotstyle$basecolor)
 	par(font.lab=2, mar=c(5.1,5.1,5.1,8), oma=c(0,0,2,0), font=2)

@@ -10,8 +10,8 @@ function(resultlist, filename, measurement_name="", directoryname="",plotstyle=N
 		# if no plotstyle available, use standard plotstyle
 		plotstyle<-qat_style_plot()
 	}
-	library("fields")
-	library("gplots")
+#	library("fields")
+#	library("gplots")
 	# set up savepath of the plot
 	path <- paste(directoryname,filename,".png", sep="")
 	png(filename=path,width=800,height=600, pointsize=12, bg=plotstyle$basecolor)

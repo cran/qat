@@ -1,6 +1,6 @@
 qat_analyse_distribution_1d <-
 function(measurement_vector, numofbars) {
-library(moments)
+#library(moments)
 ## functionality: calculates the propability distributions of a measurement_vector
 ## author: André Düsterhus
 ## date: 28.01.2010

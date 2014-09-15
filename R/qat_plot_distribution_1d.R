@@ -1,6 +1,6 @@
 qat_plot_distribution_1d <-
 function(resultlist_hist, filename, resultlist_stat, numofbars=-1, measurement_name="", directoryname="", plotstyle=NULL) {
-library(gplots)
+#library(gplots)
 ## functionality: plot the propability distribution and statistical parameters by using a resultlist of qat_analyse_distribution_1d
 ## author: André Düsterhus
 ## date: 23.02.2010

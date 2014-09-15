@@ -1,1 +1,8 @@
 exportPattern("^[[:alpha:]]+")
+import(ncdf)
+import(XML)
+import(gplots)
+import(moments)
+import(boot)
+import(fields)
+import(gdata)

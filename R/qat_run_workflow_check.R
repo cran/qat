@@ -6,7 +6,7 @@ function(measurement_vector, workflowlist, time=NULL, height= NULL, lat=NULL, lo
 ## version: A0.1
 ## input: measurement vector, workflowlist, optional: time vector, latitude vector, longitude vector, additional vectors
 ## output: a list with results
-	library("gdata")
+#	library("gdata")
 	resultlist <- list()
 	resultlistcounter <- 1
 	if (length(which(names(workflowlist)=="method"))==0) {

@@ -10,7 +10,7 @@ function(flagvector, filename, measurement_vector=NULL, max_return_elements=0, m
 		# if no plotstyle available, use standard plotstyle
 		plotstyle<-qat_style_plot()
 	}
-	library("fields")
+#	library("fields")
 	# set up savepath of the plot
 	path <- paste(directoryname,filename,".png", sep="")
 	png(filename=path,width=800,height=600, pointsize=12, bg=plotstyle$basecolor)

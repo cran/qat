@@ -6,7 +6,7 @@ function(workflowlist, name="", description="", author="", date="", sample_time_
 ## version: A0.1
 ## input: ncdf object
 ## output: to do-list of analysing steps
-	library("XML")
+#	library("XML")
 #	print("1")
 	# initialisation of variables
 	doc <- newXMLDoc()

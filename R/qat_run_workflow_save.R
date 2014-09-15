@@ -6,7 +6,7 @@ function(resultlist, baseunit="", time=NULL, height= NULL, lat=NULL, lon=NULL, v
 ## version: A0.1
 ## input: measurement vector, workflowlist, optional: time vector, latitude vector, longitude vector, additional vectors
 ## output: a list with results
-	library("gdata")
+#	library("gdata")
 	savelist <- list()
 	savelistcounter <- 1
 	cycleelement <- length(resultlist)

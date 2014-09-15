@@ -6,7 +6,7 @@ function(workflowlist, listelem, description_text) {
 # version: A0.1
 # input: to do-list of analysing steps
 # output: edited to do-list of analysing steps
- library("XML")
+# library("XML")
 	bool_added <- FALSE
 	# in the workflowlist a description should be stored under $additional_information$description
 	addinfo_elem<-which(names(workflowlist[[listelem]]) == "additional_information")

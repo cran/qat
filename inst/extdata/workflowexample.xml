@@ -4,7 +4,7 @@
 		<type>configuration</type>
 		<description>This workflow tests normal distributed vectors</description>
 		<author>André Düsterhus</author>
-		<date>2013-03-26</date>
+		<date>2010-08-02</date>
 		<tag>normal</tag>
 		<tag>testconfig</tag>
 		<version>0.1</version>

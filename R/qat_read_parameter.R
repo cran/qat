@@ -6,7 +6,7 @@ function(filename,methodname) {
 ## version: A0.2
 ## input: filename of the description file of the methods, name of the method
 ## output: a list with a corrected name, name of an analysis function or manipulation function, optional name of a plot function, description of the method and algorithm of the method
-	library("XML")
+#	library("XML")
 	# this function is not case sesitive
 	methodname<-tolower(methodname)
 	# read xml file
