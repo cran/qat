@@ -22,7 +22,6 @@ A list with the inforamtion of the colorsheme.
 \seealso{\code{\link{qat_run_workflow_plot}}}
 \examples{
 library("qat")
-\dontrun{
 # define testvector
 testvector<-rnorm(500)
 # read in workflow from systemfiles
@@ -45,7 +44,6 @@ qat_run_workflow_plot(rlist, measurement_name="Test", basename="test", plotstyle
 workflowlist <- qat_add_all_descriptions(workflowlist) 
 workflowlist <- qat_add_all_algorithms(workflowlist)
 workflowlist <- qat_add_comment(workflowlist, 1, "No problems")
-}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

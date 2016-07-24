@@ -1,6 +1,6 @@
-793be2d704fbb4eaf1446a04fb72b312 *ChangeLog
-5f1671e7b106851844c83061bc10b7af *DESCRIPTION
-810f5d2f5be127213c41ab94718c4e2a *NAMESPACE
+19ec1b8a571cee952d2761aa8640de96 *ChangeLog
+dd7ac6af27090d73e0df1a79a7b22eb1 *DESCRIPTION
+1947e86e01d38f5885b3e5f4d0fa4a40 *NAMESPACE
 beb1923490989d1becbf554f2004fc93 *R/qat_add_algorithm.R
 f0ae5fab9d6ba8c629b411458cec796b *R/qat_add_all_algorithms.R
 9a7152c53f9a1aa3affa36d0846e49ed *R/qat_add_all_descriptions.R
@@ -86,11 +86,11 @@ b681f29820a69ade0b6ed59907a21a63 *R/qat_call_set_mean.R
 c81218f734259ef46db58efd4c5c6d37 *R/qat_call_trimmed_distribution.R
 f674e8d97438d5d5589e10a9bc1f5fe6 *R/qat_config_read_workflow.R
 58849c53be22863b137332632f879d0b *R/qat_config_write_workflow.R
-79ae7b62ec374fd1756cf0a2d69b0aeb *R/qat_data_close_ncdf.R
+1ef7fe4a90c36b476e1cfe1a4725adb6 *R/qat_data_close_ncdf.R
 eb0f78631203c4182f671f1cf0cbb9ae *R/qat_data_nameofvars_ncdf.R
 b97098e6a3c6be515cc0c492ff4cc22f *R/qat_data_numofvars_ncdf.R
-812011aed87ecdd322a86823226a0a63 *R/qat_data_read_ncdf.R
-6f8d1be5a34d32a8d53a925158926f9b *R/qat_data_varcontent_ncdf.R
+0b9d90ea821bfc29de4473fdf50b4609 *R/qat_data_read_ncdf.R
+d90a5c007c108eff469dc3f61200ee91 *R/qat_data_varcontent_ncdf.R
 b82eadc57475df3e81e82fe7f27fdce0 *R/qat_measure_histogram_difference.R
 8968ec75e153af58d15ba26ceb5c6991 *R/qat_plot_block_distribution_1d.R
 83174f281e065792a111a42771e12e17 *R/qat_plot_block_distribution_2d.R
@@ -131,7 +131,7 @@ c354c4b488d0cfe8353a430b498d7d98 *R/qat_save_lim_rule_sigma_2d.R
 a4a270221f11ef7d6b7e22e37a17ad10 *R/qat_save_lim_rule_static_2d.R
 39ee39825703763f781cecf2fb884522 *R/qat_save_noc_rule_1d.R
 a4ccfe8d385a2836b0a4911fec03ae42 *R/qat_save_noc_rule_2d.R
-379e4b36cc4538554c5f5c1b4dfb196e *R/qat_save_result_ncdf.R
+8eee6cb00127ecf5f88392864c582ea9 *R/qat_save_result_ncdf.R
 1a80cae1486ea9be586424e595e512ed *R/qat_save_roc_rule_dynamic_1d.R
 b82cd2549e3659149ead8352a2ccb09d *R/qat_save_roc_rule_dynamic_2d.R
 d955e530625a418053a1148a3023ce92 *R/qat_save_roc_rule_static_1d.R
@@ -296,4 +296,4 @@ ca052a7c13ba76f2624f37a50cd1d3ad *man/qat_save_set_nans_below_1d.Rd
 c0ea094a8ba1bb5d060d5cb64c41c872 *man/qat_save_slide_distribution_2d.Rd
 41204337e8ea56edadef157829fcdcb1 *man/qat_save_trimmed_distribution_1d.Rd
 10be3f562ce32244b7dfcbc677bd3baa *man/qat_save_trimmed_distribution_2d.Rd
-2413fb8cef54103eac9cdb90b2284939 *man/qat_style_plot.Rd
+117cafc6c98b34bff3bf359a0b094497 *man/qat_style_plot.Rd

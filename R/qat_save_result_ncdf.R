@@ -24,17 +24,17 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 		# define dimension(s) for mv		
 		if (dim_mv == 1) {
 			len_mes_vec <- length(measurement_vector)
-			dim_mes_vec <- dim.def.ncdf("measurement_vector_index", "unitless", 1:length(measurement_vector))
+			dim_mes_vec <- ncdim_def("measurement_vector_index", "unitless", 1:length(measurement_vector))
 		} else {
 			dim_mes_vec <- list()
 			for (ii in 1:dim_mv) {
-				dim_mes_vec[[ii]] <- dim.def.ncdf(paste("measurement_vector_index",ii,sep=""), "unitless", 1:dim(measurement_vector)[ii])
+				dim_mes_vec[[ii]] <- ncdim_def(paste("measurement_vector_index",ii,sep=""), "unitless", 1:dim(measurement_vector)[ii])
 			}
 		}
 		# storing mv if asked to do so
 		if (store_mes_vec) {
 			contvar[[contvar_count <- contvar_count+1]] <- measurement_vector
-			var_temp <- var.def.ncdf(paste(variable_name,"measurement_vector", sep=""), baseunit, dim_mes_vec, -999, longname="Measurement Vector")
+			var_temp <- ncvar_def(paste(variable_name,"measurement_vector", sep=""), baseunit, dim_mes_vec, -999, longname="Measurement Vector")
 			variables[[contvar_count]] <- var_temp
 		} else {
 #			variables <- NULL
@@ -46,20 +46,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(time))) {
 				if (length(time) != len_mes_vec) {
-					dim_time <- dim.def.ncdf("time", addunits[1], time)
-					var_temp <- var.def.ncdf("timevec", addunits[1], dim_time, nan_value, longname="Time Vector")
+					dim_time <- ncdim_def("time", addunits[1], time)
+					var_temp <- ncvar_def("timevec", addunits[1], dim_time, nan_value, longname="Time Vector")
 				} else {
-					var_temp <- var.def.ncdf("timevec", addunits[1], dim_mes_vec, nan_value, longname="Time Vector")
+					var_temp <- ncvar_def("timevec", addunits[1], dim_mes_vec, nan_value, longname="Time Vector")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(time))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("timevec", addunits[1], dim_mes_vec, nan_value, longname="Time Vector")
+					var_temp <- ncvar_def("timevec", addunits[1], dim_mes_vec, nan_value, longname="Time Vector")
 				} else {
 					for (ii in 1:length(dim(time))) {
 						dim_time <- list()
-						dim_time[[ii]] <- dim.def.ncdf(paste("time",ii,sep=""), addunits[1], 1:dim(time)[ii])
+						dim_time[[ii]] <- ncdim_def(paste("time",ii,sep=""), addunits[1], 1:dim(time)[ii])
 					}
-					var_temp <- var.def.ncdf("timevec", addunits[1], dim_time, nan_value, longname="Time Vector")
+					var_temp <- ncvar_def("timevec", addunits[1], dim_time, nan_value, longname="Time Vector")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- time
@@ -71,20 +71,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(height))) {
 				if (length(height) != len_mes_vec) {
-					dim_height <- dim.def.ncdf("height", addunits[2], height)
-					var_temp <- var.def.ncdf("heightvec", addunits[2], dim_height, nan_value, longname="Height Vector")
+					dim_height <- ncdim_def("height", addunits[2], height)
+					var_temp <- ncvar_def("heightvec", addunits[2], dim_height, nan_value, longname="Height Vector")
 				} else {
-					var_temp <- var.def.ncdf("heightvec", addunits[2], dim_mes_vec, nan_value, longname="Height Vector")
+					var_temp <- ncvar_def("heightvec", addunits[2], dim_mes_vec, nan_value, longname="Height Vector")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(height))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("heightvec", addunits[2], dim_mes_vec, nan_value, longname="Height Vector")
+					var_temp <- ncvar_def("heightvec", addunits[2], dim_mes_vec, nan_value, longname="Height Vector")
 				} else {
 					for (ii in 1:length(dim(height))) {
 						dim_height <- list()
-						dim_height[[ii]] <- dim.def.ncdf(paste("height",ii,sep=""), addunits[2], 1:dim(height)[ii])
+						dim_height[[ii]] <- ncdim_def(paste("height",ii,sep=""), addunits[2], 1:dim(height)[ii])
 					}
-					var_temp <- var.def.ncdf("heightvec", addunits[2], dim_height, nan_value, longname="Height Vector")
+					var_temp <- ncvar_def("heightvec", addunits[2], dim_height, nan_value, longname="Height Vector")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- height
@@ -96,20 +96,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(lat))) {
 				if (length(lat) != len_mes_vec) {
-					dim_lat <- dim.def.ncdf("latitude", addunits[3], lat)
-					var_temp <- var.def.ncdf("latitudevec", addunits[3], dim_lat, nan_value, longname="Latitude Vector")
+					dim_lat <- ncdim_def("latitude", addunits[3], lat)
+					var_temp <- ncvar_def("latitudevec", addunits[3], dim_lat, nan_value, longname="Latitude Vector")
 				} else {
-					var_temp <- var.def.ncdf("latitudevec", addunits[3], dim_mes_vec, nan_value, longname="Latitude Vector")
+					var_temp <- ncvar_def("latitudevec", addunits[3], dim_mes_vec, nan_value, longname="Latitude Vector")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(lat))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("latitudevec", addunits[3], dim_mes_vec, nan_value, longname="Latitude Vector")
+					var_temp <- ncvar_def("latitudevec", addunits[3], dim_mes_vec, nan_value, longname="Latitude Vector")
 				} else {
 					for (ii in 1:length(dim(lat))) {
 						dim_lat <- list()
-						dim_lat[[ii]] <- dim.def.ncdf(paste("latitude",ii,sep=""), addunits[3], 1:dim(lat)[ii])
+						dim_lat[[ii]] <- ncdim_def(paste("latitude",ii,sep=""), addunits[3], 1:dim(lat)[ii])
 					}
-					var_temp <- var.def.ncdf("latitudevec", addunits[3], dim_lat, nan_value, longname="Latitude Vector")
+					var_temp <- ncvar_def("latitudevec", addunits[3], dim_lat, nan_value, longname="Latitude Vector")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- lat
@@ -121,20 +121,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(lon))) {
 				if (length(lon) != len_mes_vec) {
-					dim_lon <- dim.def.ncdf("longitude", addunits[4], lon)
-					var_temp <- var.def.ncdf("longitudevec", addunits[4], dim_lon, nan_value, longname="Longitude Vector")
+					dim_lon <- ncdim_def("longitude", addunits[4], lon)
+					var_temp <- ncvar_def("longitudevec", addunits[4], dim_lon, nan_value, longname="Longitude Vector")
 				} else {
-					var_temp <- var.def.ncdf("longitudevec", addunits[4], dim_mes_vec, nan_value, longname="Longitude Vector")
+					var_temp <- ncvar_def("longitudevec", addunits[4], dim_mes_vec, nan_value, longname="Longitude Vector")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(lon))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("longitudevec", addunits[4], dim_mes_vec, nan_value, longname="Longitude Vector")
+					var_temp <- ncvar_def("longitudevec", addunits[4], dim_mes_vec, nan_value, longname="Longitude Vector")
 				} else {
 					for (ii in 1:length(dim(lon))) {
 						dim_lon <- list()
-						dim_lon[[ii]] <- dim.def.ncdf(paste("longitude",ii,sep=""), addunits[4], 1:dim(lon)[ii])
+						dim_lon[[ii]] <- ncdim_def(paste("longitude",ii,sep=""), addunits[4], 1:dim(lon)[ii])
 					}
-					var_temp <- var.def.ncdf("longitudevec", addunits[4], dim_lon, nan_value, longname="Longitude Vector")
+					var_temp <- ncvar_def("longitudevec", addunits[4], dim_lon, nan_value, longname="Longitude Vector")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- lon
@@ -146,20 +146,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(vec1))) {
 				if (length(vec1) != len_mes_vec) {
-					dim_vec1 <- dim.def.ncdf("addvec1_index", addunits[5], 1:length(vec1))
-					var_temp <- var.def.ncdf("addvec1", addunits[5], dim_vec1, nan_value, longname="Additional Vector 1")
+					dim_vec1 <- ncdim_def("addvec1_index", addunits[5], 1:length(vec1))
+					var_temp <- ncvar_def("addvec1", addunits[5], dim_vec1, nan_value, longname="Additional Vector 1")
 				} else {
-					var_temp <- var.def.ncdf("addvec1", addunits[5], dim_mes_vec, nan_value, longname="Additional Vector 1")
+					var_temp <- ncvar_def("addvec1", addunits[5], dim_mes_vec, nan_value, longname="Additional Vector 1")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(vec1))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("addvec1", addunits[5], dim_mes_vec, nan_value, longname="Additional Vector 1")
+					var_temp <- ncvar_def("addvec1", addunits[5], dim_mes_vec, nan_value, longname="Additional Vector 1")
 				} else {
 					for (ii in 1:length(dim(vec1))) {
 						dim_vec1 <- list()
-						dim_vec1[[ii]] <- dim.def.ncdf(paste("addvec1_index",ii,sep=""), addunits[5], 1:dim(vec1)[ii])
+						dim_vec1[[ii]] <- ncdim_def(paste("addvec1_index",ii,sep=""), addunits[5], 1:dim(vec1)[ii])
 					}
-					var_temp <- var.def.ncdf("addvec1", addunits[5], dim_vec1, nan_value, longname="Additional Vector 1")
+					var_temp <- ncvar_def("addvec1", addunits[5], dim_vec1, nan_value, longname="Additional Vector 1")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- vec1
@@ -171,20 +171,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(vec2))) {
 				if (length(vec2) != len_mes_vec) {
-					dim_vec2 <- dim.def.ncdf("addvec2_index", addunits[6], 1:length(vec2))
-					var_temp <- var.def.ncdf("addvec2", addunits[6], dim_vec2, nan_value, longname="Additional Vector 2")
+					dim_vec2 <- ncdim_def("addvec2_index", addunits[6], 1:length(vec2))
+					var_temp <- ncvar_def("addvec2", addunits[6], dim_vec2, nan_value, longname="Additional Vector 2")
 				} else {
-					var_temp <- var.def.ncdf("addvec2", addunits[6], dim_mes_vec, nan_value, longname="Additional Vector 2")
+					var_temp <- ncvar_def("addvec2", addunits[6], dim_mes_vec, nan_value, longname="Additional Vector 2")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(vec2))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("addvec2", addunits[6], dim_mes_vec, nan_value, longname="Additional Vector 2")
+					var_temp <- ncvar_def("addvec2", addunits[6], dim_mes_vec, nan_value, longname="Additional Vector 2")
 				} else {
 					for (ii in 1:length(dim(vec2))) {
 						dim_vec2 <- list()
-						dim_vec2[[ii]] <- dim.def.ncdf(paste("addvec2_index",ii,sep=""), addunits[6], 1:dim(vec2)[ii])
+						dim_vec2[[ii]] <- ncdim_def(paste("addvec2_index",ii,sep=""), addunits[6], 1:dim(vec2)[ii])
 					}
-					var_temp <- var.def.ncdf("addvec2", addunits[6], dim_vec2, nan_value, longname="Additional Vector 2")
+					var_temp <- ncvar_def("addvec2", addunits[6], dim_vec2, nan_value, longname="Additional Vector 2")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- vec2
@@ -196,20 +196,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(vec3))) {
 				if (length(vec3) != len_mes_vec) {
-					dim_vec3 <- dim.def.ncdf("addvec3_index", addunits[7], 1:length(vec3))
-					var_temp <- var.def.ncdf("addvec3", addunits[7], dim_vec3, nan_value, longname="Additional Vector 3")
+					dim_vec3 <- ncdim_def("addvec3_index", addunits[7], 1:length(vec3))
+					var_temp <- ncvar_def("addvec3", addunits[7], dim_vec3, nan_value, longname="Additional Vector 3")
 				} else {
-					var_temp <- var.def.ncdf("addvec3", addunits[7], dim_mes_vec, nan_value, longname="Additional Vector 3")
+					var_temp <- ncvar_def("addvec3", addunits[7], dim_mes_vec, nan_value, longname="Additional Vector 3")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(vec3))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("addvec3", addunits[7], dim_mes_vec, nan_value, longname="Additional Vector 3")
+					var_temp <- ncvar_def("addvec3", addunits[7], dim_mes_vec, nan_value, longname="Additional Vector 3")
 				} else {
 					for (ii in 1:length(dim(vec3))) {
 						dim_vec3 <- list()
-						dim_vec3[[ii]] <- dim.def.ncdf(paste("addvec3_index",ii,sep=""), addunits[7], 1:dim(vec3)[ii])
+						dim_vec3[[ii]] <- ncdim_def(paste("addvec3_index",ii,sep=""), addunits[7], 1:dim(vec3)[ii])
 					}
-					var_temp <- var.def.ncdf("addvec3", addunits[7], dim_vec3, nan_value, longname="Additional Vector 3")
+					var_temp <- ncvar_def("addvec3", addunits[7], dim_vec3, nan_value, longname="Additional Vector 3")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- vec3
@@ -221,20 +221,20 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 			if (is.null(dim(vec4))) {
 				if (length(vec4) != len_mes_vec) {
-					dim_vec4 <- dim.def.ncdf("addvec4_index", addunits[8], 1:length(vec4))
-					var_temp <- var.def.ncdf("addvec4", addunits[8], dim_vec4, nan_value, longname="Additional Vector 4")
+					dim_vec4 <- ncdim_def("addvec4_index", addunits[8], 1:length(vec4))
+					var_temp <- ncvar_def("addvec4", addunits[8], dim_vec4, nan_value, longname="Additional Vector 4")
 				} else {
-					var_temp <- var.def.ncdf("addvec4", addunits[8], dim_mes_vec, nan_value, longname="Additional Vector 4")
+					var_temp <- ncvar_def("addvec4", addunits[8], dim_mes_vec, nan_value, longname="Additional Vector 4")
 				}
 			} else {
 				if (sum(dim(measurement_vector)==dim(vec4))==length(dim(measurement_vector))) {
-					var_temp <- var.def.ncdf("addvec4", addunits[8], dim_mes_vec, nan_value, longname="Additional Vector 4")
+					var_temp <- ncvar_def("addvec4", addunits[8], dim_mes_vec, nan_value, longname="Additional Vector 4")
 				} else {
 					for (ii in 1:length(dim(vec4))) {
 						dim_vec4 <- list()
-						dim_vec4[[ii]] <- dim.def.ncdf(paste("addvec4_index",ii,sep=""), addunits[8], 1:dim(vec4)[ii])
+						dim_vec4[[ii]] <- ncdim_def(paste("addvec4_index",ii,sep=""), addunits[8], 1:dim(vec4)[ii])
 					}
-					var_temp <- var.def.ncdf("addvec4", addunits[8], dim_vec4, nan_value, longname="Additional Vector 4")
+					var_temp <- ncvar_def("addvec4", addunits[8], dim_vec4, nan_value, longname="Additional Vector 4")
 				}
 			}
 			contvar[[contvar_count <- contvar_count+1]] <- vec4
@@ -269,9 +269,9 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 								}
 							} else {
 								if (is.character(savelist[[ii]]$tosave$dimunit[[jj]][[kk]])) {
-									dim_temp[[kk]] <- dim.def.ncdf(names(savelist[[ii]]$tosave$dimension[[jj]])[kk], savelist[[ii]]$tosave$dimunit[[jj]][[kk]], 1:savelist[[ii]]$tosave$dimension[[jj]][[kk]])
+									dim_temp[[kk]] <- ncdim_def(names(savelist[[ii]]$tosave$dimension[[jj]])[kk], savelist[[ii]]$tosave$dimunit[[jj]][[kk]], 1:savelist[[ii]]$tosave$dimension[[jj]][[kk]])
 								} else {
-									dim_temp[[kk]] <- dim.def.ncdf(names(savelist[[ii]]$tosave$dimension[[jj]])[kk], "unitless", 1:savelist[[ii]]$tosave$dimension[[jj]][[kk]])
+									dim_temp[[kk]] <- ncdim_def(names(savelist[[ii]]$tosave$dimension[[jj]])[kk], "unitless", 1:savelist[[ii]]$tosave$dimension[[jj]][[kk]])
 								}
 							}
 						}
@@ -286,13 +286,13 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 							}
 						} else {
 							if (is.character(savelist[[ii]]$tosave$dimunit[[jj]])) {
-								dim_temp[[1]] <- dim.def.ncdf(names(savelist[[ii]]$tosave$dimension)[jj], savelist[[ii]]$tosave$dimunit[[jj]], 1:savelist[[ii]]$tosave$dimension[[jj]])
+								dim_temp[[1]] <- ncdim_def(names(savelist[[ii]]$tosave$dimension)[jj], savelist[[ii]]$tosave$dimunit[[jj]], 1:savelist[[ii]]$tosave$dimension[[jj]])
 							} else {
-								dim_temp[[1]] <- dim.def.ncdf(names(savelist[[ii]]$tosave$dimension)[jj], "unitless", 1:savelist[[ii]]$tosave$dimension[[jj]])
+								dim_temp[[1]] <- ncdim_def(names(savelist[[ii]]$tosave$dimension)[jj], "unitless", 1:savelist[[ii]]$tosave$dimension[[jj]])
 							}
 						}
 					}
-					var_temp <- var.def.ncdf(paste(variable_name,"_",savelist[[ii]]$tosave$method,"_", savelist[[ii]]$element,"_" , names(savelist[[ii]]$tosave$longname)[jj], sep=""), savelist[[ii]]$tosave$unit[[jj]], dim_temp, savelist[[ii]]$tosave$fillvalue, longname=savelist[[ii]]$tosave$longname[[jj]])
+					var_temp <- ncvar_def(paste(variable_name,"_",savelist[[ii]]$tosave$method,"_", savelist[[ii]]$element,"_" , names(savelist[[ii]]$tosave$longname)[jj], sep=""), savelist[[ii]]$tosave$unit[[jj]], dim_temp, savelist[[ii]]$tosave$fillvalue, longname=savelist[[ii]]$tosave$longname[[jj]])
 #					if (((ii==12)&&(jj==1))||((ii==3)&&(jj==1))) {
 #						print("test")
 #						print(var_temp)
@@ -308,37 +308,37 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 		}
 		# create file
-		ncnew <- create.ncdf(paste(directoryname,filename,".nc", sep=""),variables, verbose=FALSE)
+		ncnew <- nc_create(paste(directoryname,filename,".nc", sep=""),variables, verbose=FALSE)
 		contvar_count <- contvar_count_secure
 		for (ii in 2:length(savelist)) {
 			if (is.null(savelist[[ii]]$tosave$returntext)) {
 				for(jj in 1:length(savelist[[ii]]$tosave$dimension)) {
 					contvar_count <- contvar_count + 1
 					if (!is.null(savelist[[ii]]$tosave$meanings)) {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "meanings", savelist[[ii]]$tosave$meanings[[jj]])
+						ncatt_put(ncnew, variables[[contvar_count]], "meanings", savelist[[ii]]$tosave$meanings[[jj]])
 					}
 					if (!is.null(savelist[[ii]]$tosave$unit)) {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "unit", savelist[[ii]]$tosave$unit[[jj]])
+						ncatt_put(ncnew, variables[[contvar_count]], "unit", savelist[[ii]]$tosave$unit[[jj]])
 					}
 					if (!is.null(workflowlist[[savelist[[ii]]$element]]$additional_information$description)) {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "description", workflowlist[[savelist[[ii]]$element]]$additional_information$description)
+						ncatt_put(ncnew, variables[[contvar_count]], "description", workflowlist[[savelist[[ii]]$element]]$additional_information$description)
 					}
 					if (!is.null(workflowlist[[savelist[[ii]]$element]]$additional_information$algorithm)) {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "algorithm", workflowlist[[savelist[[ii]]$element]]$additional_information$algorithm)
+						ncatt_put(ncnew, variables[[contvar_count]], "algorithm", workflowlist[[savelist[[ii]]$element]]$additional_information$algorithm)
 					}
 					if (!is.null(workflowlist[[savelist[[ii]]$element]]$additional_information$result$comment_on_result)) {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "comment", workflowlist[[savelist[[ii]]$element]]$additional_information$result$comment_on_result)
+						ncatt_put(ncnew, variables[[contvar_count]], "comment", workflowlist[[savelist[[ii]]$element]]$additional_information$result$comment_on_result)
 					}
 					if (transformationonvariable != "") {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "testedvariable_transformation", transformationonvariable)
+						ncatt_put(ncnew, variables[[contvar_count]], "testedvariable_transformation", transformationonvariable)
 					}
 					if (data_level != "") {
-						att.put.ncdf(ncnew, variables[[contvar_count]], "data_level", data_level)
+						ncatt_put(ncnew, variables[[contvar_count]], "data_level", data_level)
 					}
 					if (!is.null(savelist[[ii]]$tosave$parameter)) {
 						for (kk in 1:length(savelist[[ii]]$tosave$parameter)) {
 							if (!is.null(savelist[[ii]]$tosave$parameter[[kk]])) {
-								att.put.ncdf(ncnew, variables[[contvar_count]], paste("parameter_", names(savelist[[ii]]$tosave$parameter)[kk], sep=""), savelist[[ii]]$tosave$parameter[[kk]])
+								ncatt_put(ncnew, variables[[contvar_count]], paste("parameter_", names(savelist[[ii]]$tosave$parameter)[kk], sep=""), savelist[[ii]]$tosave$parameter[[kk]])
 							}
 						}
 					}			
@@ -352,10 +352,10 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			}
 		}
 		if (authorname != "") {
-			att.put.ncdf(ncnew, 0, "author", authorname)
+			ncatt_put(ncnew, 0, "author", authorname)
 		}
-#			att.put.ncdf(ncnew, 0, "date", date())
-		att.put.ncdf(ncnew, 0, "title", "Quality Assurance Information")
+#			ncatt_put(ncnew, 0, "date", date())
+		ncatt_put(ncnew, 0, "title", "Quality Assurance Information")
 		if ((variable_name != "") || (original_filename != "")) {
 			comm <- "This file includes quality information"
 			if (variable_name != "") {
@@ -364,7 +364,7 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 			if (original_filename != "") {
 				comm <- paste(comm, "of the file",original_filename)
 			}
-			att.put.ncdf(ncnew, 0, "comment", comm)
+			ncatt_put(ncnew, 0, "comment", comm)
 		}
 		sour <- "quality information"
 		if (original_filename!="") {
@@ -373,9 +373,9 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 		if (workflow_filename!="") {
 			sour <- paste(sour, ":", workflow_filename)
 		}
-		att.put.ncdf(ncnew, 0, "source", sour)
-		att.put.ncdf(ncnew, 0, "reference", "This file was produced with help of the R-Package qat, version 0.6")
-		att.put.ncdf(ncnew, 0, "history", paste(date(),"Performance of test"))
+		ncatt_put(ncnew, 0, "source", sour)
+		ncatt_put(ncnew, 0, "reference", "This file was produced with help of the R-Package qat, version 0.6")
+		ncatt_put(ncnew, 0, "history", paste(date(),"Performance of test"))
 
 		for (ii in 1:contvar_count) {
 			vari <- variables[[ii]]
@@ -385,8 +385,8 @@ function(measurement_vector, savelist, filename, workflowlist=NULL, time=NULL, h
 #				print(vari)
 #				print(dim(conti))
 #			}
-			put.var.ncdf(ncnew, vari$name, conti)
+			ncvar_put(ncnew, vari$name, conti)
 		}
-		close.ncdf(ncnew)
+		nc_close(ncnew)
 	}
 }
